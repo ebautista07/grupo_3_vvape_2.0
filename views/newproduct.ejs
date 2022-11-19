@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/formsproduct.css">
+    <title>Create product</title>
+</head>
+<body>
+    <!-- INICIO HEADER -->
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+        <div class="principalForm">
+        <fieldset>
+        <form action="/products" method="POST" enctype="multipart/form-data">
+            <p class="formTitle">
+                ¡INGRESA UN NUEVO PRODUCTO!
+            </p>
+            <div class="flexForm">
+                <!-- <p>
+                    <label for="id">ID del producto:</label>
+                </p>
+                <input type="text" id="id" name="id" required autocomplete="on"> -->
+                
+            <p>
+                <label for="titulo">Nombre del producto:</label>
+            </p>
+            <input type="text" id="titulo" name="titulo"  autocomplete="on">
+            <p>
+                <label for="descripcion">Descripción:</label>
+            </p>
+            <input type="text" id="descripcion" name="descripcion"  autocomplete="on">
+
+            <p>
+            <label for="img">Foto del producto:</label>
+            </p>
+            <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg">
+
+            <p>
+                <label for="categoria">Tipo de producto:</label>
+                </p>
+                <select name="categoria" id="categoria" class="control" >
+                    <option value="" disabled selected hidden>Selecciona</option>
+                    <option value="vapeador">Vapeador</option>
+                    <option value="esencia">Esencia</option>
+            </select>
+            <div class="cantidad">
+            <p>
+                <label for="stock">Cantidad disponible:</label>
+                </p>
+                <input type="number" id="stock" name="stock" required autocomplete="on" inputmode="numeric">
+            </div>      
+                <div class="priceinfo">
+            <p>
+            <label class="precio" for="precio">Precio COP:</label>
+            </p>
+            <input  type="number" id="precio" name="precio" required autocomplete="on" inputmode="numeric">
+            </div>
+
+                <div class="buttons">
+                <p class="formTitle2">
+                    
+                <a class="loginBtn"><input class="loginBtn" type="reset" value="Limpiar"></a>
+                </p>
+                
+                <p class="formTitle2">
+                <a class="loginBtn" href="/products"><input class="loginBtn" type="submit" href="/products" value="Crear"></a>
+                </p>
+            </div>
+                           
+        
+        </form>
+          
+        </fieldset>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

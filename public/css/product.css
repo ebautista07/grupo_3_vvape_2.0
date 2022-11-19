@@ -1,0 +1,281 @@
+/* #f0f0f0 blanco rgba(240,240,240,0.5)
+#de5764 rosado rgba(222,87,100,0.5)
+#a8848d moradito rgba(168,132,141,0.5)
+#7baab1 azul oscur rgba(123,170,177,0.5)
+#45d7da azul claro rgba(69,215,218,0.5)
+#151f28 azul fondo rgba(21,31,40,0.5) */
+
+body h4 {
+    font-family: Righteous;
+    font-size: 3.125rem;
+    text-shadow: none;
+    transition: transform 45ms;
+ }
+
+ .detalles{
+    font-family: righteous;
+    margin-left: 16px;
+    margin-top: 48px;
+    margin-bottom: 0;
+    
+ }
+
+option{
+    font-family: nunito;
+    font-size: 1rem;
+}
+body p, .cantidad, .control, .carrito{
+   font-family: nunito
+}
+.logo{
+    width: 100%
+}
+.card img{
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+a .carrito{
+     
+    transition: background-color .3s ease-out ;
+    border: none;
+    background-color: white;;
+    place-self: center;
+    text-decoration: none;
+    border: none;
+    width: auto;
+    padding: 9px;
+    background-color: rgba(168,132,141,0.5);
+    border-radius: 2rem;
+}
+input .carrito{
+    border: none;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+@media (max-width:769px){
+     
+    .detalles{
+        cursor: pointer;
+    }
+    .detalles:hover{
+        text-decoration: underline;
+    }
+    .description{
+        display:none;
+    }
+    .det:hover .description{
+        display:block;
+                       
+    }
+    .info{
+        display: flex;
+        margin-top: 10px;
+    }
+    .precio, .carrito{
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .description{
+        text-align: justify;
+        border-top: solid 2px rgba(21,31,40,0.5);
+        border-bottom: solid 2px rgba(21,31,40,0.5);
+        padding: 20px;
+    }
+    
+    
+    .envios{
+        background-color: rgba(123,170,177,0.2);
+        padding: 10px;
+        text-align: justify ;
+        margin-top: 40px;
+               
+    }
+    .tituloenvios, #truck{
+        font-size: 1rem;
+        margin: 20px;
+    }
+    .condiciones{
+        font-style: italic;
+        font-size: 0.6rem;
+        margin:20px
+    }
+    .dias, .gratis{
+        margin: 20px;
+        font-size: 0.8rem;
+    }
+    
+    
+    .card img{
+        
+        width: 90%;
+        justify-items: center;
+        margin-bottom: 0; 
+        margin-top: 16px;
+    }
+    .picture{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+
+    }
+
+    .productname{
+        margin: 16px;
+        margin-bottom: 10px;
+        font-size: 1.875rem;
+    }
+    .cantidad{
+        font-weight: bold;
+        margin-left: 16px;
+    }
+    .controlForm{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    a:hover .carrito{
+        cursor: pointer;
+        background-color: rgba(123,170,177,0.5);
+        border-radius: 2rem;
+            
+    } 
+
+}
+@media (min-width:770px) {
+    .navtitles li{
+        display: flex;
+        
+    }
+    .detalles{
+        display: none;
+    }
+    .noenvio{
+        display: flex;
+        margin: 16px;
+        align-items: center;
+    }
+       
+    .picture, .det, .containerP{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 100%;
+                 
+    
+    }
+    
+    .containerP{
+        
+        padding: 50px;
+        justify-content: center;
+        
+               
+    }
+    .picture{
+        align-self: center;
+    }
+    .controlForm{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: stretch;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .cantidad, .control{
+        display: flex;
+        flex-wrap: nowrap;
+        font-weight: bold;
+        margin-left: 16px;
+        font-size: 1.188rem;
+        
+    }
+    .info{
+        display: flex;
+        width: 100%;
+    }
+    .precio, .carrito{
+        display: flex;
+        flex-wrap: wrap;
+        align-items:center;
+        justify-content: space-evenly;
+        padding: 0%;
+        width: 100%;
+        font-size: 1.188rem;
+        font-weight: bold;
+    }
+    .description{
+        text-align: justify;
+        /* align-content:stretch; */
+        border-top: solid 2px rgba(21,31,40,0.5);
+        border-bottom: solid 2px rgba(21,31,40,0.5);
+        padding: 70px;
+        height: auto;
+        font-size: 1.313rem;
+        
+    }
+        
+    .envios{
+        
+        background-color: rgba(123,170,177,0.2);
+        padding: 25px;
+        text-align: center ;
+        
+               
+    }
+    .tituloenvios, #truck{
+        font-size: 1.5rem;
+        margin: 20px;
+        
+    }
+    .condiciones{
+        font-style: italic;
+        font-size: 0.8rem;
+        margin:20px
+    }
+    .dias, .gratis{
+        margin: 20px;
+        font-size: 1rem;
+    }
+    .card img{
+        
+        width: 90%;
+        justify-items: center;
+        align-items: center;
+        margin-bottom: 0; 
+        /* margin-top: 20px; */
+            }
+    
+
+    .productname{
+        margin: 41px;
+        margin-bottom: 0;
+        margin-right: 50px;
+        font-size: 3rem;
+        text-align:right;
+    }
+    .controlform{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    a:hover .carrito{
+        cursor: pointer;
+        background-color: rgba(123,170,177,0.5);
+        border-radius: 2rem;
+            
+    } 
+    .productname:hover {
+        text-shadow: 2px 2px rgba(69,215,218,0.5)
+    }
+}

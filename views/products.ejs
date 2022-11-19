@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/productindex.css">
+    <title>VVAPE products</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+        <section>
+        
+            <h2> Selecciona tu producto VVAPE favorito </h2>
+            <div class="productinf">
+            <% products.forEach(products => {%> 
+            <div class="card">
+                <a href="/products/<%=products.id%>"><img src="/images/<%=products.img%>" alt="<%=products.name%>"></a>
+                <div class="cardinfo">
+                    <div class="containerP">
+                <h4><%=products.titulo%></h4>
+                
+            </div>
+            <p class="precio"> <%=products.precio%> </p>
+            </div>
+        </div>
+        <%})%>
+            </div>
+            <h3> Página 1 de 1 </h3>
+          
+        </section>          
+
+        </main>
+       <!-- FIN MAIN --> 
+       <%- include('./partials/footer') %>  
+</body>
+</html>
+
+

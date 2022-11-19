@@ -1,0 +1,158 @@
+.footerForms{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.errorsMsg{
+    color :rgba(222,87,100);
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    
+}
+
+footer{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    list-style: none;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: 'Nunito';
+}
+
+.footTitles{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footTitles li{
+    margin-left: auto;
+    margin-right: auto;
+    list-style:none;
+    padding-left: 20px;
+    
+}
+
+form{
+    font-family: 'Nunito';
+    margin-top: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.formLogin{
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+/* .registerForm{
+    margin-bottom: 7vh;
+} */
+
+.principalForm{
+    display: flex;
+    justify-content: center;
+    margin-top: 12vh;
+    margin-bottom: 12vh;
+}
+
+.remindUserC{
+    display: flex;
+    margin-top: 5%;
+
+}
+
+#remindUser{
+    margin-left: 10%;
+}
+
+.formTitle{
+    font-family: 'Righteous';
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.formTitle:hover{
+    text-shadow: 2px 2px rgb(69 215 218 / 50%);
+}
+
+.formTitle2{
+    font-family: 'Righteous';
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+
+fieldset{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+}
+
+.registerF{
+    text-align: center;
+}
+
+a .loginBtn {
+    transition: background-color .3s ease-out;
+    border: none;
+    background-color: white;
+    place-self: center;
+    text-decoration: none;
+    border: none;
+    width: auto;
+    padding: 9px;
+    background-color: rgba(168,132,141,0.5);
+    border-radius: 2rem;
+}
+.loginBtn{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 0%;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.1rem;
+    font-family:'Nunito';
+    
+}
+
+
+.flexForm{
+    display: flex;
+    flex-direction: column;
+    /* width: min-content; */
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit" i] {
+    cursor: pointer;
+}
+
+input[type="submit" i]:hover {
+    background-color:rgba(69,215,218,0.5);
+}
+
+input[type="checkbox" ] {
+    padding-left: 10px;
+}

@@ -1,0 +1,182 @@
+main{
+  margin: 16px;
+}
+.content {
+        display: flex;
+}
+
+.h2title{
+  font-family: Righteous;
+}
+h1{
+  font-family: Righteous;
+  margin-left: 16px;
+}
+.items {
+    width: 60%;
+}
+
+.resume {
+    width: 40%;
+}
+
+.resume-description {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.line {
+    width: 100%;
+    border: solid 1px;
+}
+
+.items, .resume {
+    padding: 1rem;
+}
+
+.card {
+    font-family: 'Nunito', sans-serif;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    border: solid rgba(0, 0, 0, 0.062) 1px;
+    margin-top: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+     }
+  img{
+    border-radius: 1rem;
+  }
+
+  .card-content>img {
+    width: 20%;
+  }
+
+  .card-header {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-description, .card-footer {
+    width: 100%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-footer {
+    flex-direction: row;
+  }
+
+  .close {
+    border-radius: 0.4rem;
+    border:none;
+    cursor: pointer;
+    font-family: nunito;
+    background-color: rgba(168,132,141,0.5);
+  }
+  .close:hover{
+    background-color: rgba(222,87,100,0.5);
+  }
+  
+  .btn-cupon {
+    background-image: none;
+    background: rgba(168,132,141,0.5);
+    border: none;
+    color: #2a2a2a;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    margin-left: 6px;
+    border-radius: 0.4rem;
+  }
+  .btn-cupon:hover{
+    background-color: rgba(222,87,100,0.5);
+  }
+
+  .btn-cupon>img {
+    width: 37px;
+  }
+
+  .input-cupon {
+    height: 37px;
+    width: 90%;
+  }
+
+  .btn-checkout {
+    padding: 1rem;
+    border-radius: 2rem;
+    background: rgba(168,132,141,0.5);
+    border: none;
+    width: 20rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .btn-checkout:hover{
+    background-color: rgba(222,87,100,0.5);
+  }
+
+  .checkout {
+   display: flex;
+   justify-content: center;
+   font-family: 'Nunito', sans-serif;
+  }
+  .subtitle{
+    font-weight: bold;
+  }
+  @media (min-width:361px) and (max-width:590px){
+    .content{
+      display: block;
+    }
+    .items {
+      width: 95%;
+  }
+  .all{
+    height: 100vh;
+  }
+  .resume{
+    width: 95%;
+  }
+  }
+  @media (min-width:591px){
+    .all{
+      display: flex;
+      height: 100vh;
+    }
+    .items{
+      width: 100%;
+    }
+    h1:hover{
+      text-shadow: 2px 2px rgba(69,215,218,0.5)
+    }
+    .resume{
+      width: 46%;
+    }
+    .content{
+      width: 50%;
+    }
+    .items{
+      padding: 0;
+    }
+  }

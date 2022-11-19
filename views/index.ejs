@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/index.css">
+    <title>VVAPE</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+        <!-- Sección para poner información relevante sobre promociones vigentes o envíos -->
+        <section class="promociones">
+            <H4 class="titulopromociones"> ENVÍO SIN COSTO, POR COMPRAS SUPERIORES A $200.000 </H4>
+        </section>
+
+        <!-- Sección para promocionar los productos en stock-->
+        <section class="slider-container">
+            <article class="img-promo">
+                <img src="/images/smoke.jpg" alt="experiencia">
+                    <div class="cuerpo-promo">
+                        <p>Encuentra los mejores productos para una experiencia de vapeo inolvidable</p><br>
+                        <a class="enlace-promo" href="/products"><button class="btncompra-ahora">COMPRA AHORA</button></a>
+                    </div>
+            </article><br>
+            <article class="img-promo">
+                <img src="/images/esencia-4.jpg" alt="nuevoproducto">
+                    <div class="cuerpo-promo">
+                        <p>¿Ya conoces nuestra nueva esencia?</p><br>
+                        <a class="enlace-promo" href="/products/8"><button class="btn-pruébala">¡PRUÉBALA!</button></a>
+                    </div>
+                </article>
+        </section>
+        
+        <!-- Información sobre atención, envío y pagos -->
+        <div class="atención-envíos-pagos">
+            <div class="cuerpo-info">
+                <p><i class="fa-solid fa-headset"></i><b> Atención en línea<br><a class="atención" href="/wp">vía WhatsApp</a></b></p>
+            </div>
+            <div class="cuerpo-info">
+                <p><i class="fa-solid fa-truck"></i><b>  Envíos Nacionales</b></p>
+                
+            </div>
+            <div class="cuerpo-info">
+                <p><i class="fa-solid fa-wallet"></i><b> Flexibilidades de pago</b></p>
+            </div>
+        </div>
+
+        <!-- Presentación de algunos productos -->
+        <section class="product-cards">
+            <article class="card">
+                <img src="/images/vaper-2.jpg" alt="Vaper">
+                <div class="descripción">
+                    <p>¿Aún no te decides?<br>Entra y averigua cual es tu VVAPE favorito</p>
+                    <a class="mivvape" href="/products"><button class="btn-vvape">Mi VVAPE</button></a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="/images/esencia-1.jpg" alt="Esencia">
+                <div class="descripción">
+                    <p>Vive una experiencia VVAPE</p>
+                    <a class="escenciapromocion" href="/products"><button class="btn-escencias">Esencias</button></a>
+                </div>
+            </article>
+            <article class="card">
+                <img src="/images/smoke2.jpg" alt="Suscripción">
+                <div class="descripción">
+                    <p>¿Eres cliente frecuente?</p>
+                    <a class="suscripción" href="/register"><button class="btn-membresía">Solicita tu Tarjeta de Membresía</button> </a>
+                </div>
+            </article>
+        </section>
+    </main>
+   <!-- FIN MAIN -->
+
+   <%- include('./partials/footer') %>
+</body>
+</html>
+

@@ -1,0 +1,226 @@
+/* #f0f0f0 blanco rgba(240,240,240,0.5)
+#de5764 rosado rgba(222,87,100,0.5)
+#a8848d moradito rgba(168,132,141,0.5)
+#7baab1 azul oscur rgba(123,170,177,0.5)
+#45d7da azul claro rgba(69,215,218,0.5)
+#151f28 azul fondo rgba(21,31,40,0.5) */
+
+.footerForms{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+footer a{
+    list-style: none;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: 'Nunito';
+}
+
+.footTitles{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footTitles li{
+    margin-left: auto;
+    margin-right: auto;
+    list-style:none;
+    padding-left: 20px;
+    
+}
+
+form{
+    font-family: 'Nunito';
+    margin-top: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.registerForm{
+    margin-bottom: 7vh;
+}
+
+.principalForm{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.remindUserC{
+    display: flex;
+    margin-top: 5%;
+
+}
+
+#remindUser{
+    margin-left: 10%;
+}
+
+.formTitle{
+    font-family: 'Righteous';
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.formTitle:hover{
+    text-shadow: 2px 2px rgb(69 215 218 / 50%);
+}
+
+.formTitle2{
+    font-family: 'Righteous';
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+
+fieldset{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+}
+
+.registerF{
+    text-align: center;
+}
+
+a .loginBtn {
+    transition: background-color .3s ease-out;
+    border: none;
+    background-color: white;
+    place-self: center;
+    text-decoration: none;
+    border: none;
+    width: auto;
+    padding: 9px;
+    background-color: rgba(123,170,177,0.5);
+    border-radius: 2rem;
+}
+.loginBtn{
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-evenly;
+    padding: 0%;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0.1rem;
+    font-family:'Nunito';
+    
+}
+
+.priceinfo{
+    display: flex;
+    align-items: center;
+}
+.precio, .iva{
+    display: flex;
+    min-width: max-content;
+}
+
+.flexForm{
+    display: flex;
+    flex-direction: column;
+    /* width: min-content; */
+    justify-content: center;
+    align-items: center;
+}
+
+.cantidad{
+    display: flex;
+    align-items: center;
+}
+
+input[type="submit" i] {
+    cursor: pointer;
+}
+input[type="file" i] {
+    
+    font-size: 0.8rem;
+    margin:5px
+}
+input[id="iva"]{
+    width:40px;
+    
+}
+input[id="precio"]{
+    width:70px;
+    
+}
+input[id="stock"]{
+    width:70px;
+    
+}
+
+input[type="submit" i]:hover {
+    background-color:rgba(69,215,218,0.5);
+}
+input[type="reset" i] {
+    cursor: pointer;
+}
+
+input[type="reset" i]:hover {
+    background-color:rgba(222,87,100,0.5)
+}
+button[type="submit" ]:hover {
+    background-color:rgba(222,87,100,0.5)
+}
+
+input[type="checkbox" ] {
+    padding-left: 10px;
+}
+
+.buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.control{
+    border-radius: 1rem;
+    }
+.control:hover{
+    cursor: pointer;
+    
+}
+.loginBtn:hover{
+    cursor: pointer;
+    
+}
+
+@media (min-width:361px){
+    .principalForm{
+        justify-content: space-evenly;
+    }
+    fieldset{
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+    }
+}
+                
+

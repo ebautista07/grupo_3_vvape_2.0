@@ -1,0 +1,203 @@
+/* #f0f0f0 blanco rgba(240,240,240,0.5)
+#de5764 rosado rgba(222,87,100,0.5)
+#a8848d moradito rgba(168,132,141,0.5)
+#7baab1 azul oscur rgba(123,170,177,0.5)
+#45d7da azul claro rgba(69,215,218,0.5)
+#151f28 azul fondo rgba(21,31,40,0.5) */
+
+
+section{
+    margin-top: 50px;
+}
+body{
+        font-family: 'nunito';
+        margin:0;
+        background-color: white
+               
+}
+h3{
+    text-align: end;
+  }
+
+
+title{
+    font-size: 24px;
+      
+}  
+
+
+.precio{
+    font-size: 18px;
+    margin: 0;
+    flex-grow: 0.3;
+    font-weight: bold;
+    
+    /*margin-left: 15px*/
+}
+
+
+.containerP{
+    display: block;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    
+
+}
+.precio{
+    /* display: none; */
+    visibility: hidden;
+    }
+.card:hover .precio{
+    visibility: visible;
+    /* display: block; */
+    font-size: 16px ;
+    color:  black;
+    font-weight: normal;
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 15px;
+    transition: all 450ms;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card:hover h4{
+    text-shadow: 2px 2px rgba(123,170,177,0.5)
+} 
+
+.card:hover{
+    box-shadow: 0px 0px 10px rgb(21,31,40);
+    
+}
+
+.card:hover i{
+    transform: rotate(-90deg);
+}
+
+
+h2{
+    color:  black;
+    margin-left: 16px;
+}
+.cuerpo{
+    font-size: 12px;
+    color:#666
+}
+
+
+
+main{
+    margin:0 auto;
+    width: 90%;
+    background-color:white;
+
+}
+
+
+.card{
+    margin-bottom: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    align-content: normal;
+    border-radius: 1rem;
+    
+}
+.cardinfo{
+    background-color: white;
+    width: 100%;
+    position: relative;
+    border-radius: 1rem;
+   
+    
+}
+.card img {
+    
+    width:100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+
+
+@media (max-width: 361px){
+    
+    
+    .navContainer{
+        display:none
+    }
+    
+    .card:hover h4{
+        visibility: visible;
+    }
+  
+
+}
+
+@media (min-width:362px) and (max-width:769px) {
+    
+    .productinf{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly
+        
+    }
+    
+    .card{
+        display: flex;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        flex-wrap: wrap;
+        max-width: 40%;
+        padding: 0%;
+        margin: 0%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: space-evenly;
+        align-content: normal;
+        flex-grow: 0.5;
+        align-self: stretch
+                   
+    }
+    
+}
+
+@media(min-width: 770px) {
+    
+    .productinf{
+        display: flex;
+        justify-content: space-around
+        
+    }
+    .navContainer li{
+        padding-left: 10px;
+    }
+   
+    .productinf{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly
+        
+    }
+    
+    
+    .card{
+        display: flex;
+        margin: 0%;
+        margin-bottom: 10px;
+        justify-content: space-evenly;
+        align-content: stretch;
+        flex-grow: 0.5;
+        align-self: stretch;
+        flex-wrap: wrap;
+        /* box-shadow: 0px 0px 10px rgb(100, 100, 100); */
+        max-width: 22%;
+        padding: 0%;
+        margin-top: 10px;
+               
+                   
+    }
+    
+   
+} 

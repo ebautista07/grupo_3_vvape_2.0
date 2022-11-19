@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <title><%= producto.titulo %></title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+                 
+                <div class="card">
+                        <h4 class="productname"><%= producto.titulo %></h4>
+                <div class="notitle">
+                    <section class="noenvio"> 
+             <div class="picture"> <img src="/images/<%= producto.img %>" alt="vaper4"></div>
+                <div class="cardinfo">
+                    
+                    <div class="det">
+                        
+                    <h2 class="detalles">VER DETALLES</h2><br>
+                        <br>
+                    <p class="description"> 
+                        
+                        <%= producto.descripcion %><br>    
+                        <br>
+                     <em><%= producto.advertencia %></em></p>
+                    </div>
+                    <%- include('./partials/addtocart') %>
+                </div>    </section>
+                <%- include('./partials/envios') %>
+                    
+                    </div>
+            </div>
+
+        </main>
+    <!-- FIN MAIN --> 
+    <%- include('./partials/footer') %>  
+</body>
+</html>

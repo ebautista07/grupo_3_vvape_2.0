@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="/css/formsproduct.css">
+    <title>Modify product</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+        <div class="principalForm">
+        <fieldset>
+        <form action="/products/modify/<%= productToEdit.id %>" method="POST" enctype="multipart/form-data">
+            <p class="formTitle">
+                ¡MODIFICA UN PRODUCTO!
+            </p>
+            <div class="flexForm">
+
+                <p>
+                    <label for="categoria"> <%=productToEdit.id%> / <%=productToEdit.titulo%></label>
+                    </p>
+                    <!-- <input type="search" id="descripcion" name="descripcion" placeholder="Ingresa ID / Nombre">                    -->
+<!--                     <p>
+                        <label for="nombre">Nuevo ID</label>
+                    </p>
+                    <input type="text" id="id" name="id" placeholder="<%=productToEdit.id%>">
+             -->
+                    <p>
+                <label for="nombre">Nuevo nombre</label>
+            </p>
+            <input type="text" id="titulo" name="titulo" value="<%=productToEdit.titulo%>">
+            <p>
+                <label for="descripcion">Nueva descripción:</label>
+            </p>
+            <input type="text" id="descripcion" name="descripcion" placeholder="<%=productToEdit.descripcion%>" value="<%=productToEdit.descripcion%>">
+
+            <p>
+            <label for="imagen">Nueva foto:</label>
+            </p>
+            <input type="file" id="foto" name="foto" accept=".jpg, .png, .jpeg">
+
+            <p>
+                <label for="categoria">Tipo de producto:</label>
+                </p>
+                <select name="categoria" id="categoria" class="control" >
+                    <option value="" disabled selected hidden>Selecciona</option>
+                    <option value="vapeador">Vapeador</option>
+                    <option value="esencia">Esencia</option>
+            </select>
+            <div class="cantidad">
+                <p>
+                    <label for="stock">Cantidad disponible:</label>
+                    </p>
+                    <input type="number" id="stock" name="stock" required autocomplete="on" inputmode="numeric">
+                </div> 
+            <div class="priceinfo">
+            <p>
+                <label class="precio" for="precio">Precio COP:</label>
+                </p>
+                <input  type="number" id="precio" name="precio"  inputmode="numeric" placeholder="<%=productToEdit.precio%>" value="<%=productToEdit.precio%>">
+                </div>
+            <div class="buttons">
+                <p class="formTitle2">
+                    
+                <a class="loginBtn"><input class="loginBtn" type="reset" value="Limpiar"></a>
+                </p>
+                
+                <p class="formTitle2">
+                <a class="loginBtn"><button type="submit" class="loginBtn">Modificar</button></a>
+                <!-- <a class="loginBtn" href="/products/<%= productToEdit.id %>"><input class="loginBtn" type="submit" href="/products/<%= productToEdit.id %>" value="Modificar"></a> -->
+                </p>
+            </div>                  
+        </form>
+        <div class="buttons">
+            <form method="POST" action="/products/delete/<%= productToEdit.id %>" >
+                <!--  <p class="formTitle2">
+                     <a class="loginBtn" href="/product/<%= productToEdit.id %>"><input class="loginBtn" type="submit" href="/product/<%= productToEdit.id %>" value="Eliminar"></a>
+                     </p> -->
+                     <a class="loginBtn" ><button class="loginBtn" type="submit" >Eliminar</button></a>
+             </form>
+        </div>
+        </fieldset>
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>

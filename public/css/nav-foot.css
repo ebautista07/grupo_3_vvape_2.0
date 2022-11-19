@@ -1,0 +1,163 @@
+/* INICIA NAV BAR */
+
+nav .navLink a, a:visited, a:link{
+    list-style: none;
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+/* INICIA FORMS */
+
+form #formA, :visited, :link{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+form .formTitle , :visited, :link{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+form .formTitle2 , :visited, :link{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+nav{
+    background-color: #151f28;
+    color: #f0f0f0;
+    font-family: 'Nunito';
+}
+.logoVvape{
+    width: 15vw;
+}
+
+.principalNav{
+    display: flex;
+}
+
+@media (max-width: 362px){
+    .navtitles{
+        display: none;
+    }
+    .principalNav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footTitles li{
+        padding-right: 20px;
+        
+    }
+}
+@media (min-width: 362px) and (max-width: 769px){
+    .navtitles{
+        display: none;
+        margin-right: 2%;
+    }
+    .principalNav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .footTitles li{
+        padding-right: 20px;
+        
+    }
+}
+
+@media (min-width: 770px){
+    .principalNav{
+        height: 10vh;
+    }
+    .logoVvape{
+        height: 10vh;
+        width: min-content;
+    }
+    #burger{
+        display: none;
+    }
+    .principalNav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navtitles{
+        display: flex;
+        padding: auto;
+        align-items: center;
+        margin-right: 2%;
+    }
+    .navtitles li{
+        padding-left: 50px;
+        list-style: none;
+    }
+    .fa-user-circle{
+        padding-right: 8px;
+    }
+    .fa-shopping-cart{
+        padding-right: 8px;
+    }
+    .fa-fire-flame-curved{
+        padding-right: 8px;
+    }
+}
+
+#burger{
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    margin: auto 5%;
+}
+
+/* ESTILOS FOOTER */
+
+.footerForms{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer{
+    height: 10vh;
+    background-color: #151f28;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: space-between; 
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a{
+    list-style: none;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: 'Nunito';
+}
+
+.footTitles{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footTitles li{
+    margin-left: auto;
+    margin-right: auto;
+    list-style:none;
+    padding-left: 20px;
+    
+}
+
+/* FINAL FOOTER */
