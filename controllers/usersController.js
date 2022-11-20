@@ -47,7 +47,7 @@ const usersController = {
   } else{
     users.push(newUser);
     fs.writeFileSync(usersFilePath, JSON.stringify(users, null));
-    res.redirect("/products")};
+    res.redirect("/users/login")};
   }, //PENDIENTE CAMBIAR REDIRECT!!!!!!!!!!!!
   login: (req, res) => {
     
