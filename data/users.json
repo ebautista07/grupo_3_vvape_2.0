@@ -56,7 +56,7 @@
     "apellido": "Bautista",
     "email": "estebarile@gmail.com",
     "password": "$2a$10$vIm2fd8O4e9OopnheqP/huKz5v//3xrFNDLAKmIinNjyvD6LTVDx6",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 7,
@@ -65,7 +65,7 @@
     "apellido": "Peña",
     "email": "deipa280@hotmail.com",
     "password": "$2a$10$nHey.i0Cv32E4aK9uaN4geCLtWByBe64oRQWysTMbWcjG8jdmgtzS",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 8,
@@ -74,7 +74,7 @@
     "apellido": "GRIM",
     "email": "prueba@p.com",
     "password": "$2a$10$FiAY0vfoaFRbm7whXqYtv.ey/wNV/ElgkqGE2gylcz1q98OCDKDPO",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 9,
@@ -83,7 +83,7 @@
     "apellido": "b",
     "email": "b@b.b",
     "password": "$2a$10$DZnA5u7RC.NkHE9.8zbkaOYd28x75a/v3iXEKiAcqlHFZUjVibrXG",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 10,
@@ -92,7 +92,7 @@
     "apellido": "a",
     "email": "a@a.a",
     "password": "$2a$10$4lItQ7QsrPJmwp3yJH1AkOklOm2WiHf9NMC6Bi3QqzY2u2EiGIW52",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 11,
@@ -101,7 +101,7 @@
     "apellido": "",
     "email": "",
     "password": "$2a$10$1FJAgXAGZfK6MGNVnOyuLuD7hdWrwRbCQVwlcI7c5Y2fNyELvLX9G",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 12,
@@ -110,7 +110,7 @@
     "apellido": "e",
     "email": "e@e.e",
     "password": "$2a$10$2vh4v0Y09GN0BwBEAmdfLOTbB5XNQnTCU.uQvg82Q418Jqfhfqbny",
-    "img": "uDefault-image.jpeg"
+    "img": "uDefault-image.png"
   },
   {
     "id": 13,
@@ -129,5 +129,14 @@
     "email": "f@f.f",
     "password": "$2a$10$XApVhChhi88/1a0AUuhBIOo8x2hdA5rbpmARlQppQVXz1uhCOMs/i",
     "img": "user_1668903100154.jpg"
+  },
+  {
+    "id": 15,
+    "date": "2022-11-02",
+    "nombre": "s",
+    "apellido": "s",
+    "email": "s@s.s",
+    "password": "$2a$10$1q2TuTlLY559Ey95xgKjNe1AZt204njDdGv/uIUDEWnVVhdUambr.",
+    "img": "uDefault-image.png"
   }
 ]

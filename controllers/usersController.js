@@ -28,7 +28,7 @@ const usersController = {
       if (req.files[0] != undefined) {
         image = req.files[0].filename;
       } else {
-        image = "uDefault-image.jpeg";
+        image = "uDefault-image.png";
       }
     let hashPassword = bcryptjs.hashSync(req.body.password,10);
     let newUser = {

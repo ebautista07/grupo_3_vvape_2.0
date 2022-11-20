@@ -158,7 +158,11 @@ input[type="checkbox" ] {
 }
 
 .profilePic{
-        width: 100px;
-    height: 100px;
+        width: 150px;
+    height: 150px;
 
+}
+
+.card {
+    text-align: -webkit-center;
 }
