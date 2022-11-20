@@ -156,3 +156,10 @@ input[type="submit" i]:hover {
 input[type="checkbox" ] {
     padding-left: 10px;
 }
+
+.profilePic{
+    display:flex;
+    width: 100px;
+    height: 100px;
+
+}

@@ -56,10 +56,17 @@ const usersController = {
   loginProcess:(req,res)=>{
     let userToLogin=users.find((user)=>user.email==req.body.email);
     
-    if(userToLogin){
+    if(userToLogin){ 
+      if(req.body.remindUser){
+        res.cookie('userEmail',req.body.email,{
+          maxAge: ((60*1000)*60)
+        }) 
+      } console.log(res.cookie)
       let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password);
       if(passwordOk){
-        req.session.userToLogin;
+        delete userToLogin.password;
+        req.session.userLogged=userToLogin;
+        
         res.redirect('/users/profile')
       }
       return res.render("login", {
@@ -70,6 +77,7 @@ const usersController = {
         }
       }) 
       }
+      
     return res.render("login", {
     errors:{
       email:{
@@ -77,16 +85,22 @@ const usersController = {
       }
     }
   })
+  
   },
   shoppingcart: (req, res) => {
     res.render("shoppingcart");
   },
   profile: (req, res) => {
-    console.log('Estás logeado');
     console.log(req.session);
-    res.render('profile')
-  } 
-
-};
+    res.render('profile',{
+      user: req.session.userLogged
+    })
+  },
+  logout: (req, res) => {
+    res.clearCookie('userEmail')
+    req.session.destroy();
+    return res.redirect('/')
+  }
+}
 
 module.exports = usersController;

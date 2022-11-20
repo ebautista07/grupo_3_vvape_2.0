@@ -4,10 +4,12 @@ const router = express.Router();
 const { body,check } = require('express-validator')
 const usersController = require("../controllers/usersController");
 
-// MULTER
+// MIDDLEWARES
 
 const multer = require("multer");
 const path = require("path");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 //STORAGE
 
@@ -42,7 +44,7 @@ router.get('/', function(req, res, next) {
 });
 
 // createUsers
-router.get("/register", usersController.register);
+router.get("/register",guestMiddleware,usersController.register);
 router.post("/register",[
   check('date').notEmpty().withMessage(''),
   body('nombre').isLength({min:1}).withMessage('Escribí tu nombre'),
@@ -51,21 +53,16 @@ router.post("/register",[
   check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
 ],usersController.store);
 
-// usuarios
+// usuariosLogin
 
-router.get("/login", usersController.login);
+router.get("/login",guestMiddleware, usersController.login);
 router.post("/login", usersController.loginProcess);
 
 //PerfilUsuario
-router.get("/profile", usersController.profile);
-router.get("/profile/:id", upload.any(),usersController.profile);
-
-
+router.get("/profile",authMiddleware, usersController.profile);
 router.post("/profile", upload.any(),usersController.store);
-router.post("/profile",validations,usersController.store);
-router.post("/profile/:id", upload.any(),usersController.store);
-
-
+router.get("/logout",usersController.logout);
+// router.post("/profile",validations,usersController.store);
 
 // shoppingK
 router.get("/shoppingcart", usersController.shoppingcart);

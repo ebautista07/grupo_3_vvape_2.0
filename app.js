@@ -5,12 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride =  require('method-override');
 const session = require('express-session');
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 //RUTAS
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-
-
 
 const app = express();
 
@@ -22,7 +21,6 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public'))); //DIFERENTE
 app.use(methodOverride('_method'));
 
@@ -32,6 +30,8 @@ app.use(session({
 	resave: false,
 	saveUninitialized: false,
 }));
+app.use(cookieParser());
+app.use(userLoggedMiddleware);
 
 //MIDDLEWARE RUTAS
 app.use('/', indexRouter);
