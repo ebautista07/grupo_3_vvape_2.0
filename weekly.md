@@ -35,3 +35,8 @@
             - Incluir categoria en el products.json
             - Cambios campos numericos
             
+11/19 - DP - EB: - Migrar Repositorio
+                 - Sessión y Login
+                 - Cookie y Has de password
+                 - Finalización de Sprint 5, Dificultad con las cookies y max time
+            
