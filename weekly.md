@@ -36,7 +36,7 @@
             - Cambios campos numericos
             
 11/19 - DP - EB: - Migrar Repositorio
-                 - Sessión y Login
-                 - Cookie y Has de password
+                 - Session y Login
+                 - Cookie y Hash de password
                  - Finalización de Sprint 5, Dificultad con las cookies y max time
             
