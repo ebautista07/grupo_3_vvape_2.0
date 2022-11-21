@@ -82,7 +82,7 @@ const productsController = {
       };
       products.push(newProduct);
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null));
-      res.redirect("products");
+      res.redirect("/products");
     },
     delete: (req, res) => {
       let id = req.params.id;
