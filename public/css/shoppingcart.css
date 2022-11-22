@@ -47,6 +47,16 @@ h1{
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 
+.cardCheckout{
+  font-family: 'Nunito', sans-serif;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  border: solid rgba(0, 0, 0, 0.062) 1px;
+  margin-top: 10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
 
   .card-content {
     display: flex;

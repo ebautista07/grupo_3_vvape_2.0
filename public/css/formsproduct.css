@@ -5,6 +5,12 @@
 #45d7da azul claro rgba(69,215,218,0.5)
 #151f28 azul fondo rgba(21,31,40,0.5) */
 
+.newProduct{
+    display: block;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
 .footerForms{
     height: 10vh;
     background-color: #151f28;
