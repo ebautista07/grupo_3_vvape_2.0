@@ -39,4 +39,8 @@
                  - Session y Login
                  - Cookie y Hash de password
                  - Finalización de Sprint 5, Dificultad con las cookies y max time
+                 
+12/05 - DP - EB: - Creación diagrama de relaciones
+                 - Script estructura
+        
             
