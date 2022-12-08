@@ -79,10 +79,10 @@ CREATE INDEX `products_categories_id_idx` ON `vappe`.`products` (`category_id`);
 -- Table `vappe`.`cart_detail`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `vappe`.`cart_detail` (
-  `id` INT UNSIGNED NOT NULL,
-  `product_quantity` INT NULL,
-  `total_price` DECIMAL(30,5) NULL,
-  `product_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_quantity` INT NOT NULL,
+  `total_price` DECIMAL(30,5) NOT NULL,
+  `product_id` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `cart_detail_products_id`
     FOREIGN KEY (`product_id`)
