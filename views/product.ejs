@@ -3,7 +3,7 @@
 <head>
     <%- include('./partials/head') %>
     <link rel="stylesheet" href="/css/product.css">
-    <title><%= producto.titulo %></title>
+    <title><%= product.name %></title>
 </head>
 <body>
     <%- include('./partials/nav') %>
@@ -11,10 +11,10 @@
     <main>
                  
                 <div class="card">
-                        <h4 class="productname"><%= producto.titulo %></h4>
+                        <h4 class="productname"><%= product.name %></h4>
                 <div class="notitle">
                     <section class="noenvio"> 
-             <div class="picture"> <img src="/images/<%= producto.img %>" alt="vaper4"></div>
+             <div class="picture"> <img src="/images/<%= product.img %>" alt="vaper4"></div>
                 <div class="cardinfo">
                     
                     <div class="det">
@@ -23,9 +23,9 @@
                         <br>
                     <p class="description"> 
                         
-                        <%= producto.descripcion %><br>    
+                        <%= product.description %><br>    
                         <br>
-                     <em><%= producto.advertencia %></em></p>
+                     <em><%= product.warning %></em></p>
                     </div>
                     <%- include('./partials/addtocart') %>
                 </div>    </section>

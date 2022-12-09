@@ -5,6 +5,7 @@ const router = express.Router();
 
 const mainController = require("../controllers/mainController");
 const productsController = require("../controllers/productsController");
+const dbProductsController = require("../controllers/dbProductsController");
 const usersController = require("../controllers/usersController");
 
 const multer = require("multer");
@@ -27,13 +28,14 @@ let upload = multer({ storage: storage });
 router.get("/", mainController.index);
 
 // productos
-router.get("/products", productsController.products);
-// productos detallados
-router.get("/products/:id", productsController.product);
+router.get("/products", dbProductsController.products);
 
+// productos detallados
+router.get("/products/:id", dbProductsController.product);
 
 // createproduct
-router.get("/newproduct", productsController.newproduct);
+router.get("/newproduct", dbProductsController.newproduct);
+
 router.post("/products", upload.any(), productsController.store);
 
 //modifyproduct

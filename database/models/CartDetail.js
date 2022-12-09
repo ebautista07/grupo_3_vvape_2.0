@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         product_id: { //`product_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
-            autoIncrement: true
+            // autoIncrement: true
         }
     };
     let config = {

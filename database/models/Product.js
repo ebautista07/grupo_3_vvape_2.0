@@ -15,11 +15,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         description: { //`description` VARCHAR(4000) NOT NULL,
-            type: dataTypes.STRING(4000).UNSIGNED,
+            type: dataTypes.STRING(4000),
             allowNull: false
         },
         price: { //`price` DECIMAL(30,5) UNSIGNED NOT NULL,
-            type: dataTypes.DECIMAL(30,5).UNSIGNED,
+            type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
         img: { //`img` VARCHAR(100) NULL,
