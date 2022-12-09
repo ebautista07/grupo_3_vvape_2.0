@@ -36,19 +36,52 @@ const productsController = {
         }) 
       },
     'newproduct': (req, res) => {
-      res.render("newproduct");
+      let categories = Categories.findAll();
+      Promise
+      .all([categories])
+      .then(([categories]) =>{
+        return res.render("newproduct",{categories});})
+      .catch(error => res.send(error))
     },
+    'store': (req, res) => {
+      let image;
+      if (req.files[0] != undefined) {
+        image = req.files[0].filename;
+      } else {
+        image = "default-image.jpeg";
+      }
+      Products
+      .create(
+      {
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        img: image,
+        // stock: req.body.stock,
+        category_id:req.body.category_id,
+        warning:"**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva"
+      }
+      )
+      // console.log(req.body.category_id)
+      .then(() => {
+        return res.redirect("/products")})
+      .catch(error => res.send(error))
+      },
     modifyproduct: (req, res) => {
-      let productToEdit = products.find(
-        (producto) => producto.id == req.params.id
-      );
-      res.render("modifyproduct", { productToEdit });
+      const Product = db.Product.findByPk(req.params.id,{
+        include:['category']
+      })
+      const categories = Categories.findAll();
+      Promise
+      .all(([Product,categories]))
+      .then(([Product,categories]) =>{
+        res.render("modifyproduct",{Product,categories});})
+      .catch(error => res.send(error))
     },
     update: (req, res) => {
-      console.log(req.body);
-      let productToUpdate = products.find(
-        (producto) => producto.id == req.params.id
-      );
+      let productToUpdate = Products.findByPk(req.params.id,{
+        include:['category']
+      })
       let image;
       if (req.files[0] != undefined) {
         image = req.files[0].filename;
@@ -57,62 +90,24 @@ const productsController = {
       } else {
         image = "default-image.jpeg";
       }
-      let precio= "$" + req.body.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  
-      let NewProductToUpdate = {
-        id: productToUpdate.id,
-        titulo: req.body.titulo,
-        descripcion: req.body.descripcion,
-        precio: precio,
-        categoria: req.body.categoria,
+      Products.update({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
         img: image,
-        stock: req.body.stock,
-        advertencia:
-          "**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva",
-      };
-      let newProduct = products.map((producto) => {
-        if (producto.id == NewProductToUpdate.id) {
-          return (producto = { ...NewProductToUpdate });
-        }
-        return producto;
-      });
-      console.log(newProduct);
-      console.log("prueba2");
-      fs.writeFileSync(productsFilePath, JSON.stringify(newProduct, null));
-      res.redirect("/products");
-    },
-    store: (req, res) => {
-      let image;
-      if (req.files[0] != undefined) {
-        image = req.files[0].filename;
-      } else {
-        image = "default-image.jpeg";
-      }
-      let precio= "$" + req.body.precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      
-      let newProduct = {
-        id: products[products.length - 1].id + 1,
-        titulo: req.body.titulo,
-        descripcion: req.body.descripcion,
-        precio: precio,
-        img: image,
-        stock: req.body.stock,
-        categoria:req.body.categoria,
-        advertencia:
-          "**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva",
-      };
-      products.push(newProduct);
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null));
-      res.redirect("/products");
+        // stock: req.body.stock,
+        category_id:req.body.category_id,
+        warning:"**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva"
+      },{
+        where:{id:req.params.id}
+      })
+      .then(() => res.redirect("/products"))
     },
     delete: (req, res) => {
-      let id = req.params.id;
-      let finalProducts = products.filter((product) => product.id != id);
-      fs.writeFileSync(
-        productsFilePath,
-        JSON.stringify(finalProducts, null, " ")
-      );
-      res.redirect("/products");
+      Products.destroy({
+        where:{id:req.params.id}
+      })
+      .then(() => res.redirect("/products"))
     },
   };
   

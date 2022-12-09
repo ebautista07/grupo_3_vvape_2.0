@@ -35,15 +35,18 @@ router.get("/products/:id", dbProductsController.product);
 
 // createproduct
 router.get("/newproduct", dbProductsController.newproduct);
-
-router.post("/products", upload.any(), productsController.store);
+router.post("/products", upload.any(), dbProductsController.store);
+// router.post("/products", upload.any(), productsController.store);
 
 //modifyproduct
-router.get("/products/:id/modifyproduct", productsController.modifyproduct);
-router.post("/products/modify/:id", upload.any(), productsController.update);
+router.get("/products/:id/modifyproduct", dbProductsController.modifyproduct);
+router.post("/products/modify/:id", upload.any(), dbProductsController.update);
+// router.get("/products/:id/modifyproduct", productsController.modifyproduct);
+// router.post("/products/modify/:id", upload.any(), productsController.update);
 
 // eliminar
-router.post("/products/delete/:id", productsController.delete);
+router.post("/products/delete/:id", dbProductsController.delete);
+// router.post("/products/delete/:id", productsController.delete);
 
 module.exports = router;
 

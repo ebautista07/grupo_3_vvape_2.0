@@ -22,13 +22,13 @@
                 <input type="text" id="id" name="id" required autocomplete="on"> -->
                 
             <p>
-                <label for="titulo">Nombre del producto:</label>
+                <label for="name">Nombre del producto:</label>
             </p>
-            <input type="text" id="titulo" name="titulo"  autocomplete="on">
+            <input type="text" id="titulo" name="name"  autocomplete="on">
             <p>
-                <label for="descripcion">Descripción:</label>
+                <label for="description">Descripción:</label>
             </p>
-            <input type="text" id="descripcion" name="descripcion"  autocomplete="on">
+            <input type="text" id="descripcion" name="description"  autocomplete="on">
 
             <p>
             <label for="img">Foto del producto:</label>
@@ -36,12 +36,13 @@
             <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg">
 
             <p>
-                <label for="categoria">Tipo de producto:</label>
+                <label for="category">Tipo de producto:</label>
                 </p>
-                <select name="categoria" id="categoria" class="control" >
+                <select name="category_id" id="category_id" class="control" >
                     <option value="" disabled selected hidden>Selecciona</option>
-                    <option value="vapeador">Vapeador</option>
-                    <option value="esencia">Esencia</option>
+                    <% categories.forEach(category => {%> 
+                    <option value="<%=category.id%>"><%=category.name%></option>
+                    <% }) %> 
             </select>
             <div class="cantidad">
             <p>
@@ -51,9 +52,9 @@
             </div>      
                 <div class="priceinfo">
             <p>
-            <label class="precio" for="precio">Precio COP:</label>
+            <label class="precio" for="price">Precio COP:</label>
             </p>
-            <input  type="number" id="precio" name="precio" required autocomplete="on" inputmode="numeric">
+            <input  type="number" id="precio" name="price" required autocomplete="on" inputmode="numeric">
             </div>
 
                 <div class="buttons">
