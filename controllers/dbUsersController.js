@@ -109,9 +109,14 @@ const dbUsersController = {
   },
   profile: (req, res) => {
     console.log(req.session);
-    res.render('profile',{
-      user: req.session.userLogged,
-      Users
+    let userProfile = Users.findOne({
+      where: {
+          email: req.session.userLogged
+         },
+         raw: true
+    }).then(user=>{
+      console.log(user);
+      res.render('profile',{user})
     })
   },
   logout: (req, res) => {

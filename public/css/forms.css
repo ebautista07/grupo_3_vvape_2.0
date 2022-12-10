@@ -52,7 +52,7 @@ footer a{
 
 form{
     font-family: 'Nunito';
-    margin-top: auto;
+    /* margin-top: auto; */
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -166,3 +166,16 @@ input[type="checkbox" ] {
 .card {
     text-align: -webkit-center;
 }
+.btn-checkout {
+    padding: 0.5rem;
+    border-radius: 2rem;
+    background: rgba(168,132,141,0.5);
+    border: none;
+    width: 8rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .btn-checkout:hover{
+    background-color: rgba(69,215,218,0.5);;
+  }

@@ -91,23 +91,34 @@ nav{
         padding: auto;
         align-items: center;
         margin-right: 2%;
+        justify-content: space-around;
     }
     .navtitles li{
         padding-left: 50px;
         list-style: none;
+        display: flex;
+    }
+    .navtitles li .search{
+        padding-left: 0px;
+        
     }
     .fa-user-circle{
         padding-right: 8px;
+        
     }
     .fa-shopping-cart{
         padding-right: 8px;
+        
     }
     .fa-fire-flame-curved{
         padding-right: 8px;
+       
     }
     .fa-arrow-right-from-bracket{
         padding-right: 8px;
     }
+    
+
 }
 
 #burger{
