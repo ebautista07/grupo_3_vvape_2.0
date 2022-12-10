@@ -17,19 +17,16 @@
             <!-- <p>Te damos la bienvenida a la familia VVAPE</p> -->            
             
                <div class="card">
-                <p class="profilePic"> <img class="profilePic" src="/images/users/<%= user.img %>" alt="profilePhoto"> </p>
+                <p class="profilePic"> <img class="profilePic" src="/images/users/<%= user.user_img %>" alt="profilePhoto"> </p>
         </div>
-
-
-
                 
                 <!-- <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg"> -->
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre" required value=<%= user.nombre %> autocomplete="on">        
+                <input type="text" id="nombre" name="name" required value=<%= user.name %> autocomplete="on">        
             </p>
             <p>
                 <label for="apellido">Apellido:</label><br>
-                <input type="text" id="apellido" name="apellido" required value=<%= user.apellido %> autocomplete="on">        
+                <input type="text" id="apellido" name="last_name" required value=<%= user.last_name %> autocomplete="on">        
             </p>
             <p>
                 <label for="email">Email:</label><br>
@@ -43,7 +40,7 @@
            
             
                 <p>Fecha de nacimiento:</p>
-                <input type="text" id="nombre" name="nombre" value=<%= user.date %> required autocomplete="on" >
+                <input type="text" id="nombre" name="birth_date" value=<%= user.birth_date %> required autocomplete="on" >
                 <p>
           
             </p>

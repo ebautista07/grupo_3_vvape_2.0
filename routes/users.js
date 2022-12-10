@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const { body,check } = require('express-validator')
-const usersController = require("../controllers/usersController");
+// const usersController = require("../controllers/usersController");
+const dbUsersController = require("../controllers/dbUsersController");
 
 // MIDDLEWARES
 
@@ -44,27 +45,38 @@ router.get('/', function(req, res, next) {
 });
 
 // createUsers
-router.get("/register",guestMiddleware,usersController.register);
+// router.get("/register",guestMiddleware,usersController.register);
+// router.post("/register",[
+//   check('date').notEmpty().withMessage(''),
+//   body('nombre').isLength({min:1}).withMessage('Escribí tu nombre'),
+//   check('apellido').notEmpty().withMessage('Escribí tu apellido'),
+//   check('email').isEmail().withMessage('Escribe un email valido'),
+//   check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
+// ],usersController.store);
+
+
+router.get("/register",guestMiddleware,dbUsersController.register);
 router.post("/register",[
   check('date').notEmpty().withMessage(''),
   body('nombre').isLength({min:1}).withMessage('Escribí tu nombre'),
   check('apellido').notEmpty().withMessage('Escribí tu apellido'),
   check('email').isEmail().withMessage('Escribe un email valido'),
   check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
-],usersController.store);
+],dbUsersController.store);
+
 
 // usuariosLogin
 
-router.get("/login",guestMiddleware, usersController.login);
-router.post("/login", usersController.loginProcess);
+router.get("/login",guestMiddleware, dbUsersController.login);
+router.post("/login", dbUsersController.loginProcess);
 
 //PerfilUsuario
-router.get("/profile",authMiddleware, usersController.profile);
-router.post("/profile", upload.any(),usersController.store);
-router.get("/logout",usersController.logout);
+router.get("/profile",authMiddleware, dbUsersController.profile);
+router.post("/profile", upload.any(),dbUsersController.store);
+router.get("/logout",dbUsersController.logout);
 // router.post("/profile",validations,usersController.store);
 
 // shoppingK
-router.get("/shoppingcart", usersController.shoppingcart);
+router.get("/shoppingcart", dbUsersController.shoppingcart);
 
 module.exports = router;

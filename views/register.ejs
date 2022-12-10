@@ -16,14 +16,14 @@
             </p>
             <p>Te damos la bienvenida a la familia VVAPE</p>
             <p>Ingresa tu fecha de nacimiento:</p>
-            <input type="date" name="date" id="date" value="" autocomplete="off" placeholder="DD MM YYYY" required>
+            <input type="date" name="birth_date" id="date" value="" autocomplete="off" placeholder="YYYY MM DD" required>
             <p>
                 <label for="nombre">Nombre:</label><br>
-                <input type="text" id="nombre" name="nombre"  autocomplete="on" required>        
+                <input type="text" id="nombre" name="name"  autocomplete="on" required>        
             </p>
             <p>
                 <label for="apellido">Apellido:</label><br>
-                <input type="text" id="apellido" name="apellido"  autocomplete="on" required>        
+                <input type="text" id="apellido" name="last_name"  autocomplete="on" required>        
             </p>
             <p>
                 <label for="email">Email:</label><br>
@@ -40,13 +40,14 @@
             <p>
                 <label for="img">Foto de usuario:</label>
                 </p>
-                <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg">
+                <input type="file" id="img" name="user_img"  autocomplete="on" accept=".jpg, .png, .jpeg">
             <p>
                 ¡Declaro ser mayor de edad! <br><input type="checkbox" name="check" id="check" >
             </p>
             <p>
-                <a class="loginBtn"><input class="loginBtn" type="submit" value="REGÍSTRATE"></a>
-                <!--<button type="submit">register</button>--></p>
+                <!-- <a class="loginBtn"><input class="loginBtn" type="submit" value="REGÍSTRATE"></a> -->
+                
+                <button type="submit">register</button></p>
             </p>
         </fieldset>
         </form>

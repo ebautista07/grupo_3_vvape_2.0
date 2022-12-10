@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `vappe`.`users` (
   `name` VARCHAR(100) NOT NULL,
   `last_name` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(500) NOT NULL,
   `birth_date` DATE NOT NULL,
   `user_img` VARCHAR(100) NULL,
   PRIMARY KEY (`id`))
