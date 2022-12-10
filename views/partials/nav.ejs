@@ -15,11 +15,19 @@
                     <li class="navtitles-access"><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="/users/login">Acceso</a></li>
                     <li><i class="fa-solid fa-fire-flame-curved"></i><a href="/products">Productos</a></li>
                     <% } %>
+                       <form  action="/products/list" method="POST">
+                        <input name="search" type="search" placeholder="Search...">
+                      </form>
+                    
                 </ul>
-            <i id="burger"class="fa-solid fa-bars navicon"></i>
+                        
+                
+                <i id="burger"class="fa-solid fa-bars navicon"></i>
         </nav>
     </header>
     <!-- FINAL HEADER -->
 
     <!-- SI ESTA LOGEADO: PERFIL, CARRITO, PRODUCTOS, Cerrar
     SI NO ESTA LOGUEADO: REGISTRATE, ACCESO, PRODUCTOS -->
+
+   

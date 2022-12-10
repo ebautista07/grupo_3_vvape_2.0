@@ -27,6 +27,10 @@ let upload = multer({ storage: storage });
 // Principal
 router.get("/", mainController.index);
 
+//product search list
+router.get("/products/list", dbProductsController.detail);
+router.post("/products/list", dbProductsController.detail);
+
 // productos
 router.get("/products", dbProductsController.products);
 
@@ -47,6 +51,8 @@ router.post("/products/modify/:id", upload.any(), dbProductsController.update);
 // eliminar
 router.post("/products/delete/:id", dbProductsController.delete);
 // router.post("/products/delete/:id", productsController.delete);
+
+
 
 module.exports = router;
 

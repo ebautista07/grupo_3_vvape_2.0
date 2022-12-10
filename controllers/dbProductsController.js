@@ -35,6 +35,20 @@ const productsController = {
             res.render("product", {product,toThousand},);
         }) 
       },
+    'detail': (req, res) => {
+      let searchButton = '%'
+      Products.findAll({
+        include:['category'],
+        where: {
+         name: {[db.Sequelize.Op.like]: searchButton+req.body.search+searchButton}
+        }
+     }).then(products=>{
+         res.render('list', {products,toThousand})
+        // console.log(products)
+        })
+        .catch(error => res.send(error))
+
+    },
     'newproduct': (req, res) => {
       let categories = Categories.findAll();
       Promise
