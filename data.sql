@@ -18,6 +18,7 @@ INSERT INTO products VALUES
 (DEFAULT, 'SHERBET CHERRY', '¿Buscas una esencia audaz con un sabor bien redondeado? Entonces este líquido es perfecto para ti. Cada golpe proporcionará una mezcla cuidadosamente diseñada de cerezas dulces, fresas maduras y un mentol fresco para dejarte con un final refrescante.', 35500,'esencia-6.jpg','Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva',1);
 INSERT INTO products VALUES
 (DEFAULT, 'SODA PINEAPPLE CRUSH', 'Es un delicioso cóctel de piña colada, elaborado con jugo de piña y mezclado con menta, cubierto con crema y batico con refrescantes hielos picados. Dejandote el sabor de la playa, la brisa y el mar en tu boca.', 35500,'esencia-4.jpg','Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva',1);
-
+INSERT INTO users VALUES
+(DEFAULT, "nombre c","lacontraseñaes c","c@c.c", "$2a$10$jc27Q.zzW17vJHyZ3RHhv.90w8Q67hwY2MletRJwdmXcCXPEkjjYq", "1998-05-13", "uDefault-image.png")
 
 
