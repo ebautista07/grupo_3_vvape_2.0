@@ -49,11 +49,11 @@ const dbUsersController = {
   
   },
       
-  login: (req, res) => {
+  'login': (req, res) => {
     
     res.render("login");
   },
-  loginProcess:(req,res)=>{
+  'loginProcess':(req,res)=>{
     
     let userToFind=Users.findOne({
         where: {
@@ -104,10 +104,10 @@ const dbUsersController = {
     
   
   },
-  shoppingcart: (req, res) => {
+  'shoppingcart': (req, res) => {
     res.render("shoppingcart");
   },
-  profile: (req, res) => {
+  'profile': (req, res) => {
     console.log(req.session);
     let userProfile = Users.findOne({
       where: {
@@ -119,7 +119,7 @@ const dbUsersController = {
       res.render('profile',{user})
     })
   },
-  update: (req, res) => {
+  'update': (req, res) => {
     let userToUpdate = Users.findOne({
       where: {
           email: req.session.userLogged
@@ -138,7 +138,7 @@ const dbUsersController = {
     Users.update({
       name: req.body.name,
       last_name: req.body.last_name,
-      // email: req.body.email,
+      email: req.body.email,
       password: hashPassword,
       birth_date: req.body.birth_date,
       user_img: image,
@@ -146,9 +146,9 @@ const dbUsersController = {
     },{
       where:{email:req.session.userLogged}
     })
-    .then(() => res.redirect("/profile"))
+    .then(() => res.redirect("/"))
   },
-  logout: (req, res) => {
+  'logout': (req, res) => {
     res.clearCookie('userEmail')
     req.session.destroy();
     return res.redirect('/')

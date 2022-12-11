@@ -74,7 +74,7 @@ router.post("/login", dbUsersController.loginProcess);
 router.get("/profile",authMiddleware, dbUsersController.profile);
 router.post("/profile", upload.any(),dbUsersController.store);
 router.get("/logout",dbUsersController.logout);
-router.post("/profile", upload.any(),dbUsersController.update);
+router.put("/profile", upload.any(),dbUsersController.update);
 // router.post("/profile",validations,usersController.store);
 
 
