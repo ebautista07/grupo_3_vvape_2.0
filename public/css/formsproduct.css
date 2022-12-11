@@ -59,9 +59,10 @@ footer a{
 
 form{
     font-family: 'Nunito';
-    margin-top: auto;
+    /* margin-top: auto; */
     padding-left: 5%;
     padding-right: 5%;
+    /* display: contents; */
 }
 
 .registerForm{
@@ -107,6 +108,7 @@ form{
 fieldset{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 1rem;
+    
 }
 
 .registerF{
@@ -226,6 +228,7 @@ input[type="checkbox" ] {
     padding-inline-start: 0;
     padding-inline-end: 0;
     padding-block-end: 0;
+    padding-bottom: 14px;
     }
 }
                 

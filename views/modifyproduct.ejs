@@ -25,6 +25,13 @@
                     </p>
                     <input type="text" id="id" name="id" placeholder="<%=Product.id%>">
              -->
+             <div class="card">
+                <p class="profilePic"> <img class="profilePic" src="/images/<%= Product.img %>" alt="profilePhoto"> </p>
+        </div>
+        <p>
+            <label for="img">Nueva foto de producto:</label>
+            </p>
+            <input type="file" id="foto" name="img" accept=".jpg, .png, .jpeg" value="<%=Product.img%>">
                     <p>
                 <label for="name">Nuevo nombre</label>
             </p>
@@ -34,10 +41,7 @@
             </p>
             <input type="text" id="description" name="description" placeholder="<%=Product.description%>" value="<%=Product.description%>">
 
-            <p>
-            <label for="img">Nueva foto:</label>
-            </p>
-            <input type="file" id="foto" name="img" accept=".jpg, .png, .jpeg" value="<%=Product.img%>">
+            
 
             <p>
                 <label for="category">Tipo de producto:</label>
@@ -73,12 +77,13 @@
             </div>                  
         </form>
         <div class="buttons">
-            <form method="POST" action="/products/delete/<%= Product.id %>" >
+            <p><form method="POST" action="/products/delete/<%= Product.id %>" >
                 <!--  <p class="formTitle2">
                      <a class="loginBtn" href="/product/<%= Product.id %>"><input class="loginBtn" type="submit" href="/product/<%= Product.id %>" value="Eliminar"></a>
                      </p> -->
                      <a class="loginBtn" ><button class="loginBtn" type="submit" >Eliminar</button></a>
              </form>
+            </p>
         </div>
         </fieldset>
         </div>

@@ -119,6 +119,35 @@ const dbUsersController = {
       res.render('profile',{user})
     })
   },
+  update: (req, res) => {
+    let userToUpdate = Users.findOne({
+      where: {
+          email: req.session.userLogged
+         },
+         raw: true
+    })
+    let image;
+    if (req.files[0] != undefined) {
+      image = req.files[0].filename;
+    } else if (userToUpdate.user_img != undefined) {
+      image = userToUpdate.user_img;
+    } else {
+      image = "uDefault-image.png";
+    }
+    let hashPassword = bcryptjs.hashSync(req.body.password,10);
+    Users.update({
+      name: req.body.name,
+      last_name: req.body.last_name,
+      // email: req.body.email,
+      password: hashPassword,
+      birth_date: req.body.birth_date,
+      user_img: image,
+            
+    },{
+      where:{email:req.session.userLogged}
+    })
+    .then(() => res.redirect("/profile"))
+  },
   logout: (req, res) => {
     res.clearCookie('userEmail')
     req.session.destroy();

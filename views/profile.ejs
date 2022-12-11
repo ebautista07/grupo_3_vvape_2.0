@@ -19,8 +19,15 @@
                <div class="card">
                 <p class="profilePic"> <img class="profilePic" src="/images/users/<%= user.user_img %>" alt="profilePhoto"> </p>
         </div>
+        <p>
+            <label for="img">Nueva foto de perfil:</label>
+            </p>
+            <input type="file" id="foto" name="img" accept=".jpg, .png, .jpeg" value="<%=user.user_img%>">
                 
+
                 <!-- <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg"> -->
+                <br>
+                <p>
                 <label for="nombre">Nombre:</label><br>
                 <input type="text" id="nombre" name="name" required value=<%= user.name %> autocomplete="on">        
             </p>
@@ -35,24 +42,21 @@
             <p>
                 
                 <label for="password">Cambia tu contraseña:</label><br>
-                <input type="password" id="password" name="password" required autocomplete="on">
+                <input type="password" id="password" name="password" value=<%= user.password %>required autocomplete="on">
             </p>
            
             
                 <p>Fecha de nacimiento:</p>
-                <input type="text" id="nombre" name="birth_date" value=<%= user.birth_date %> required autocomplete="on" >
+                <input type="date" id="nombre" name="birth_date" value=<%= user.birth_date %> required autocomplete="on" >
                 <p>
           
             </p>
+            
 
-            <form class="loginBtn" action="/users/profile" method="POST">
-                
-                <p>
-                    <a class="loginBtn" href="register"><input class="loginBtn" type="submit" href="register" value="ACTUALIZA TU PERFIL"></a>
-                    </p>
-                                   
-
-            </form>
+            <p>
+                                
+                <button class="btn-profile" type="submit">ACTUALIZA TU PERFIL</button>
+            </p>
         </fieldset>
         </form>
         </div>
