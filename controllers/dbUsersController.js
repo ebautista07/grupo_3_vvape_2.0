@@ -72,15 +72,16 @@ const dbUsersController = {
         res.cookie('userEmail',req.body.email,{
           maxAge: ((60*1000)*60)
         }) 
-      } console.log(res.cookie)
-      console.log(userToLogin);
-      console.log(userPassword);
+      } 
+      // console.log(res.cookie)
+      // console.log(userToLogin);
+      // console.log(userPassword);
       let passwordOk = bcryptjs.compareSync(req.body.password,userPassword);
       // let passwordOk = userPassword;
       // console.log(passwordOk);
       if(passwordOk){
         delete userPassword;
-        req.session.userLogged=userToLogin;
+        req.session.userLogged = userToLogin;
         
         res.redirect('/users/profile')
       }
