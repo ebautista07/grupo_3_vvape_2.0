@@ -69,7 +69,9 @@ title{
 } 
 
 .card:hover{
-    box-shadow: 0px 0px 10px rgb(21,31,40);
+    /* box-shadow: 0px 0px 10px rgb(21,31,40); */
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(89,11,68,0.3); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(89,11,68,0.3);
     
 }
 
