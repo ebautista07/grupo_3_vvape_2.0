@@ -43,9 +43,15 @@ const productsController = {
          name: {[db.Sequelize.Op.like]: searchButton+req.body.search+searchButton}
         }
      }).then(products=>{
-         res.render('list', {products,toThousand})
-        // console.log(products)
-        })
+        if (products.length <= 0){
+          let message = "No se encontraron productos VVAPE"
+          console.log(message)
+          res.render('emptyList', {message,products,toThousand})
+        }
+          else {
+            res.render('list', {products,toThousand})
+        console.log(products)
+        }})
         .catch(error => res.send(error))
 
     },
@@ -81,7 +87,7 @@ const productsController = {
         return res.redirect("/products")})
       .catch(error => res.send(error))
       },
-    modifyproduct: (req, res) => {
+    'modifyproduct': (req, res) => {
       const Product = db.Product.findByPk(req.params.id,{
         include:['category']
       })
@@ -92,7 +98,7 @@ const productsController = {
         res.render("modifyproduct",{Product,categories});})
       .catch(error => res.send(error))
     },
-    update: (req, res) => {
+    'update': (req, res) => {
       let productToUpdate = Products.findByPk(req.params.id,{
         include:['category']
       })
@@ -117,7 +123,7 @@ const productsController = {
       })
       .then(() => res.redirect("/products"))
     },
-    delete: (req, res) => {
+    'delete': (req, res) => {
       Products.destroy({
         where:{id:req.params.id}
       })
