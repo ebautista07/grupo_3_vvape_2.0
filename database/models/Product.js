@@ -34,6 +34,11 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.INTEGER.UNSIGNED,
         allowNull: false,
                 
+        },
+        stock:   { //INT UNSIGNED NOT NULL
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false,
+        
         }
     };
     let config = {

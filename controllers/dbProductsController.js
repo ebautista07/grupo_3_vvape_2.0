@@ -77,7 +77,7 @@ const productsController = {
         description: req.body.description,
         price: req.body.price,
         img: image,
-        // stock: req.body.stock,
+        stock: req.body.stock,
         category_id:req.body.category_id,
         warning:"**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva"
       }
@@ -115,7 +115,7 @@ const productsController = {
         description: req.body.description,
         price: req.body.price,
         img: image,
-        // stock: req.body.stock,
+        stock: req.body.stock,
         category_id:req.body.category_id,
         warning:"**Producto exclusivo para mayores de edad, pueden contener nicotina, la cual es una sustancia adictiva"
       },{

@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `vappe`.`products` (
   `img` VARCHAR(100) NULL,
   `warning` VARCHAR(4000) NOT NULL,
   `category_id` INT UNSIGNED NOT NULL,
+  `stock` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `products_categories_id`
     FOREIGN KEY (`category_id`)
