@@ -105,11 +105,10 @@ const productsController = {
       let image;
       if (req.files[0] != undefined) {
         image = req.files[0].filename;
-      } else if (productToUpdate.img != undefined) {
+      } else  {productToUpdate.img != undefined
         image = productToUpdate.img;
-      } else {
-        image = "default-image.jpeg";
-      }
+      } 
+    
       Products.update({
         name: req.body.name,
         description: req.body.description,

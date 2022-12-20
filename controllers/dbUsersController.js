@@ -130,11 +130,12 @@ const dbUsersController = {
     let image;
     if (req.files[0] != undefined) {
       image = req.files[0].filename;
-    } else if (userToUpdate.user_img != undefined) {
+    } else {userToUpdate.user_img != undefined 
       image = userToUpdate.user_img;
-    } else {
-      image = "uDefault-image.png";
-    }
+    } 
+    // else {
+    //   image = "uDefault-image.png";
+    // }
     let hashPassword = bcryptjs.hashSync(req.body.password,10);
     Users.update({
       name: req.body.name,
