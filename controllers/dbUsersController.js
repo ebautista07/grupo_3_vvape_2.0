@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 const moment = require('moment');
 const session = require("express-session");
 const {validationResult} = require('express-validator');
+const { check } = require('express-validator')
 
 // modelos
 
@@ -19,9 +20,16 @@ const dbUsersController = {
   'register': (req, res) => {
     res.render("register");
   },
- 
+  
   'store': (req, res, next) => {
-    // let errors = validationResult(req)
+
+  
+    let errors = validationResult(req);
+    res.send(errors);
+    // console.log(validationResult)
+    // console.log(errors)
+
+
       let image;
       if (req.files[0] != undefined) {
         image = req.files[0].filename;
@@ -45,7 +53,8 @@ const dbUsersController = {
         
     .then(() => {
         return res.redirect("/users/login")})
-    //   .catch(errors => res.render('register', {errors:errors.errors}));
+
+      .catch(errors => res.render('register', {errors:errors.errors}));
   
   },
       
@@ -67,6 +76,7 @@ const dbUsersController = {
     // console.log(userToLogin);
     // console.log(userPassword);
     // res.redirect("/users/login")
+    console.log(req.body.remindUser)
     if(userToLogin){ 
       if(req.body.remindUser){
         res.cookie('userEmail',req.body.email,{
@@ -154,9 +164,9 @@ const dbUsersController = {
     res.clearCookie('userEmail')
     req.session.destroy();
     return res.redirect('/')
-  }
-   // processRegister:(req, res) =>{
-  //   // const resultValidation = validationResult(req);
+  },
+  //  'processRegister':(req, res) =>{
+  //   const resultValidation = validationResult(req);
   //   console.log(resultValidation);
   //   if(resultValidation.errors.length>0){
   //     return res.render("register",{
@@ -166,6 +176,7 @@ const dbUsersController = {
   //   }
   //   return res.send('Ok, las validaciones se pasaron y no tienes errores');
   // }
+
 }
 
 module.exports = dbUsersController;

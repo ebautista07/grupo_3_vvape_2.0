@@ -1,9 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const { body,check } = require('express-validator')
-// const usersController = require("../controllers/usersController");
+// DB
+const db = require('../database/models')
+const sequelize = db.sequelize;
+const Users = db.User;
+
+//EXPRESS-VALIDATOR
+const { body } = require('express-validator')
+
+//CONTROLLER
 const dbUsersController = require("../controllers/dbUsersController");
+// const usersController = require("../controllers/usersController");
 
 // MIDDLEWARES
 
@@ -30,12 +38,40 @@ let upload = multer({ storage: storage });
 
 //VALIDACION FORMULARIO REGISTRO USUARIOS
 const validations = [
-  check('date').notEmpty().withMessage(''),
-  check('nombre').notEmpty().withMessage('Escribí tu nombre'),
-  check('apellido').notEmpty().withMessage('Escribí tu apellido'),
-  check('email').isEmail().withMessage('Escribe un email valido'),
-  check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
+  body('date').notEmpty().withMessage('Ingresa tu fecha de nacimiento'),
+  body('name').notEmpty().isLength({min: 2}).withMessage('Escribí tu nombre'),
+  body('last_name').notEmpty().isLength({min: 2}).withMessage('Escribí tu apellido'),
+  body('email').isEmail().bail().withMessage('Escribe un email válido').custom((value,{req})=>{
+    return Users.findOne({email:value}).then(user =>{
+      if(user){
+        return Promise.reject('El email ya existe')
+      }
+    });
+  }),
+  body('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres'),
+  body('user_img').custom((value, { req }) => {
+		let file = req.file;
+		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		
+		// if (!file) {
+		// 	throw new Error('Tienes que subir una imagen');
+		// } else {
+		 	let fileExtension = path.extname(file.originalname);
+			if (!acceptedExtensions.includes(fileExtension)) {
+				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+			}
+				return true;
+	})
 ]
+
+//VALIDACION FORMULARIO LOGIN USUARIOS
+
+const validationsLogin = [
+    body('email').isEmail().bail().withMessage('Escribe un email válido'),
+  body('password').notEmpty().isLength({min: 8}).withMessage('Escribe una contraseña válida')  
+]
+
+
 
 // RUTAS
 
@@ -44,31 +80,14 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-// createUsers
-// router.get("/register",guestMiddleware,usersController.register);
-// router.post("/register",[
-//   check('date').notEmpty().withMessage(''),
-//   body('nombre').isLength({min:1}).withMessage('Escribí tu nombre'),
-//   check('apellido').notEmpty().withMessage('Escribí tu apellido'),
-//   check('email').isEmail().withMessage('Escribe un email valido'),
-//   check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
-// ],usersController.store);
-
-
 router.get("/register",guestMiddleware,dbUsersController.register);
-router.post("/register",[
-  check('date').notEmpty().withMessage(''),
-  body('nombre').isLength({min:1}).withMessage('Escribí tu nombre'),
-  check('apellido').notEmpty().withMessage('Escribí tu apellido'),
-  check('email').isEmail().withMessage('Escribe un email valido'),
-  check('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres')
-],dbUsersController.store);
+router.post("/register",validations,dbUsersController.store);
 
 
 // usuariosLogin
 
 router.get("/login",guestMiddleware, dbUsersController.login);
-router.post("/login", dbUsersController.loginProcess);
+router.post("/login",validationsLogin, dbUsersController.loginProcess);
 
 //PerfilUsuario
 router.get("/profile",authMiddleware, dbUsersController.profile);
@@ -76,8 +95,6 @@ router.post("/profile", upload.any(),dbUsersController.store);
 router.get("/logout",dbUsersController.logout);
 router.put("/profile", upload.any(),dbUsersController.update);
 // router.post("/profile",validations,usersController.store);
-
-
 
 // shoppingK
 router.get("/shoppingcart", dbUsersController.shoppingcart);

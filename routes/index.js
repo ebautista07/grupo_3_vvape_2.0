@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const { body } = require('express-validator')
 
 
 const mainController = require("../controllers/mainController");
@@ -24,6 +24,27 @@ let storage = multer.diskStorage({
 
 let upload = multer({ storage: storage });
 
+
+//VALIDACION CREACION PRODUCTOS
+
+const validationsProducts = [
+  body('name').notEmpty().isLength({min: 5}).withMessage('El nombre debe tener mínimo 5 caracteres'),
+  body('description').notEmpty().isLength({min: 20}).withMessage('La descripción debe tener mínimo 20 caracteres'),
+  body('img').custom((value, { req }) => {
+		let file = req.file;
+		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		
+		// if (!file) {
+		// 	throw new Error('Tienes que subir una imagen');
+		// } else {
+		 	let fileExtension = path.extname(file.originalname);
+			if (!acceptedExtensions.includes(fileExtension)) {
+				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+			}
+				return true;
+	})
+]
+
 // Principal
 router.get("/", mainController.index);
 
@@ -39,7 +60,7 @@ router.get("/products/:id", dbProductsController.product);
 
 // createproduct
 router.get("/newproduct", dbProductsController.newproduct);
-router.post("/products", upload.any(), dbProductsController.store);
+router.post("/products", validationsProducts,upload.any(), dbProductsController.store);
 // router.post("/products", upload.any(), productsController.store);
 
 //modifyproduct
