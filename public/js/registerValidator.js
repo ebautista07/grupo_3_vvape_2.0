@@ -39,6 +39,15 @@ window.addEventListener('load',function(){
             errors.push('El campo de contraseña debe contener mínimo 8 caracteres')
         }
 
+        let user_img = document.querySelector('input.user_img');
+        let filePath = user_img.value;
+        let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+        if(!allowedExtensions.exec(filePath)){
+            errors.push('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+            // user_img.value = '';
+            // return false;
+        }
+
         if (errors.length > 0){
             event.preventDefault();
             let ulErrors = document.querySelector('div.errorsMsg ul')
@@ -48,4 +57,5 @@ window.addEventListener('load',function(){
         }
     })
 }); 
+
 
