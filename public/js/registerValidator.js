@@ -28,11 +28,8 @@ window.addEventListener('load',function(){
 
         let validEmail = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
         let email = document.querySelector('input.email')
-        if(email.value.match(validEmail)){
-            errors.push('válido')
-            errors.push('Por favor digita un email válido')
-        }else{
-            errors.push("Invalid email address!");
+        if(!email.value.match(validEmail)){
+            errors.push("Por favor ingresa un email válido");
         }
 
         let password = document.querySelector('input.password')
@@ -44,7 +41,7 @@ window.addEventListener('load',function(){
 
         if (errors.length > 0){
             event.preventDefault();
-            let ulErrors = document.querySelector('div.errors ul')
+            let ulErrors = document.querySelector('div.errorsMsg ul')
             for (let i = 0; i < errors.length; i++) {
                 ulErrors.innerHTML += '<li>' + errors[i] + '</li>'
             }

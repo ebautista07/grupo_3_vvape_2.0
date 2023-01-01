@@ -17,6 +17,11 @@
     
 }
 
+.errorsMsgUl{
+    list-style:none;
+    padding-left: 0px;
+}
+
 footer{
     height: 10vh;
     background-color: #151f28;
