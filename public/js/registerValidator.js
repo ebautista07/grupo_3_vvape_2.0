@@ -43,7 +43,7 @@ window.addEventListener('load',function(){
         let filePath = user_img.value;
         let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
         if(!allowedExtensions.exec(filePath)){
-            errors.push('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+            errors.push('Por favor adjunta archivos con una extensión válida ejm:.jpeg/.jpg/.png/.gif.');
             // user_img.value = '';
             // return false;
         }

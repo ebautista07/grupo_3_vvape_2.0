@@ -9,22 +9,27 @@
     <main class="formLogin">
         <div class="principalForm">
         <fieldset>
-        <form action="/users/login" method="POST">
+        <form action="/users/login" method="POST" class="loginForm">
             <p class="formTitle">
                 ¡BIENVENIDO DE NUEVO!
             </p>
+            <!-- errors form -->
+            <div class="errorsMsg">
+                <ul class="errorsMsgUl">
+                </ul>
+            </div>            
             <div class="flexForm">
             <p>
                 <label for="email">Email:</label>
             </p>
-            <input type="email" id="nombre" name="email"  autocomplete="on" required>
+            <input type="text" id="nombre" name="email"  autocomplete="on" >
             <br><% if (locals.errors && errors.email) { %>
                 <div class="errorsMsg"><%= errors.email.msg %> </div>
             <% } %>
             <p>
                 <label for="password">Contraseña:</label>
             </p>
-            <input type="password" id="nombre" name="password"  autocomplete="on" required>
+            <input type="password" id="password" name="password"  autocomplete="on" >
             <div class="remindUserC">Recordarme<input type="checkbox" name="remindUser" id="remindUser"></div>
             <br>
             <% if (locals.errors && errors.password) { %>
@@ -46,5 +51,6 @@
         </div>
     </main>
     <%- include('./partials/footer') %>
+    <script src='/js/loginValidator.js'></script>
 </body>
 </html>

@@ -61,28 +61,18 @@ const dbUsersController = {
     let userToFind=Users.findOne({
         where: {
             email: req.body.email
-           },
-           raw: true
+          },
+          raw: true
     }).then(user=>{
-        // console.log(user.email)
         let userToLogin=user.email;
         let userPassword=user.password
-    // console.log(userToLogin);
-    // console.log(userPassword);
-    // res.redirect("/users/login")
-    console.log(req.body.remindUser)
     if(userToLogin){ 
       if(req.body.remindUser){
         res.cookie('userEmail',req.body.email,{
           maxAge: ((60*1000)*60)
         }) 
       } 
-      // console.log(res.cookie)
-      // console.log(userToLogin);
-      // console.log(userPassword);
       let passwordOk = bcryptjs.compareSync(req.body.password,userPassword);
-      // let passwordOk = userPassword;
-      // console.log(passwordOk);
       if(passwordOk){
         delete userPassword;
         req.session.userLogged = userToLogin;
@@ -93,21 +83,22 @@ const dbUsersController = {
         errors:{
           password:{
             msg:'Las credenciales son incorrectas'
-          }}
+          },
+          email:{
+            msg:'Las credenciales son incorrectas'
+          }
+        }
       }) 
-      }
-      
-    return res.render("login", {
-    errors:{
-      email:{
-        msg:'Por favor ingresa un email válido'
-      }
-    }
-  })     
-       })
-       .catch(error => res.send(error));
-    
-  
+      }      
+  //   return res.render("login", {
+  //   errors:{
+  //     email:{
+  //       msg:'Por favor ingresa un email válido'
+  //     }
+  //   }
+  // })     
+      })
+      .catch(error => res.send(error));
   },
   'shoppingcart': (req, res) => {
     res.render("shoppingcart");

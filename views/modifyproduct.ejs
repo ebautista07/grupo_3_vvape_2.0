@@ -10,10 +10,15 @@
     <main>
         <div class="principalForm">
         <fieldset>
-        <form action="/products/modify/<%= Product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/products/modify/<%= Product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="createForm">
             <p class="formTitle">
                 ¡MODIFICA UN PRODUCTO!
             </p>
+            <!-- errors form -->
+            <div class="errorsMsg">
+                <ul class="errorsMsgUl">
+                </ul>
+            </div> 
             <div class="flexForm">
 
                 <p>
@@ -35,18 +40,18 @@
                     <p>
                 <label for="name">Nuevo nombre</label>
             </p>
-            <input type="text" id="titulo" name="name" value="<%=Product.name%>">
+            <input type="text" id="titulo" name="name" class="name" value="<%=Product.name%>">
             <p>
                 <label for="description">Nueva descripción:</label>
             </p>
-            <input type="text" id="description" name="description" placeholder="<%=Product.description%>" value="<%=Product.description%>">
+            <input type="text" id="description" class="description" name="description" placeholder="<%=Product.description%>" value="<%=Product.description%>">
 
             
 
             <p>
                 <label for="category">Tipo de producto:</label>
                 </p>
-                <select name="category_id" id="category_id" class="control" >
+                <select name="category_id" id="category_id" class="control category" >
                     <option value="" disabled selected hidden>Selecciona</option>
                     <% categories.forEach(category => {%> 
                     <option value="<%=category.id%>"><%=category.name%></option>
@@ -89,5 +94,6 @@
         </div>
     </main>
     <%- include('./partials/footer') %>
+    <script src='/js/productValidatorM.js'></script>
 </body>
 </html>

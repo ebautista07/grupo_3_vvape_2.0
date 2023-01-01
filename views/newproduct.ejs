@@ -11,7 +11,7 @@
     <main class="newProduct">
         <div class="principalForm">
         <fieldset>
-        <form action="/products" method="POST" enctype="multipart/form-data">
+        <form action="/products" method="POST" enctype="multipart/form-data" class="createForm">
             <p class="formTitle">
                 ¡INGRESA UN NUEVO PRODUCTO!
             </p>
@@ -20,41 +20,45 @@
                     <label for="id">ID del producto:</label>
                 </p>
                 <input type="text" id="id" name="id" required autocomplete="on"> -->
-                
+            <!-- errors form -->
+            <div class="errorsMsg">
+                <ul class="errorsMsgUl">
+                </ul>
+            </div> 
             <p>
                 <label for="name">Nombre del producto:</label>
             </p>
-            <input type="text" id="titulo" name="name"  autocomplete="on">
+            <input type="text" id="titulo" name="name" class="name" autocomplete="on">
             <p>
                 <label for="description">Descripción:</label>
             </p>
-            <input type="text" id="descripcion" name="description"  autocomplete="on">
+            <input type="text" id="descripcion" name="description" class="description" autocomplete="on">
 
             <p>
             <label for="img">Foto del producto:</label>
             </p>
-            <input type="file" id="img" name="img"  autocomplete="on" accept=".jpg, .png, .jpeg">
+            <input type="file" id="img" name="img" class="img" autocomplete="on" >
 
             <p>
                 <label for="category">Tipo de producto:</label>
                 </p>
-                <select name="category_id" id="category_id" class="control" >
+                <select name="category_id" id="category_id" class="control category" >
                     <option value="" disabled selected hidden>Selecciona</option>
                     <% categories.forEach(category => {%> 
                     <option value="<%=category.id%>"><%=category.name%></option>
                     <% }) %> 
-            </select>
+            </select >
             <div class="cantidad">
             <p>
                 <label for="stock">Cantidad disponible:</label>
                 </p>
-                <input type="number" id="stock" name="stock" required autocomplete="on" inputmode="numeric">
+                <input type="number" id="stock" name="stock"  autocomplete="on" inputmode="numeric" required>
             </div>      
                 <div class="priceinfo">
             <p>
             <label class="precio" for="price">Precio COP:</label>
             </p>
-            <input  type="number" id="precio" name="price" required autocomplete="on" inputmode="numeric">
+            <input  type="number" id="precio" name="price"  autocomplete="on" inputmode="numeric" required>
             </div>
 
                 <div class="buttons">
@@ -75,5 +79,6 @@
         </div>
     </main>
     <%- include('./partials/footer') %>
+    <script src='/js/productValidator.js'></script>
 </body>
 </html>
