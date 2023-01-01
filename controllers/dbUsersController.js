@@ -22,12 +22,9 @@ const dbUsersController = {
   },
   
   'store': (req, res, next) => {
-
-  
     let errors = validationResult(req);
-    res.send(errors);
+    // res.send(errors);
     // console.log(validationResult)
-    // console.log(errors)
 
 
       let image;
@@ -36,9 +33,8 @@ const dbUsersController = {
       } else {
         image = "uDefault-image.png";
       }
-    let hashPassword = bcryptjs.hashSync(req.body.password,10);
 
-    console.log(req.body.name)
+    let hashPassword = bcryptjs.hashSync(req.body.password,10);
 
     Users
     .create({
@@ -53,9 +49,7 @@ const dbUsersController = {
         
     .then(() => {
         return res.redirect("/users/login")})
-
-      .catch(errors => res.render('register', {errors:errors.errors}));
-  
+        .catch(errors => res.render('register', {errors:errors.errors}));
   },
       
   'login': (req, res) => {

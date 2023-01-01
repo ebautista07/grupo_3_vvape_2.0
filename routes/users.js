@@ -5,9 +5,9 @@ const router = express.Router();
 const db = require('../database/models')
 const sequelize = db.sequelize;
 const Users = db.User;
+const { body } = require('express-validator')
 
 //EXPRESS-VALIDATOR
-const { body } = require('express-validator')
 
 //CONTROLLER
 const dbUsersController = require("../controllers/dbUsersController");
@@ -37,32 +37,28 @@ let upload = multer({ storage: storage });
 
 
 //VALIDACION FORMULARIO REGISTRO USUARIOS
-const validations = [
-  body('date').notEmpty().withMessage('Ingresa tu fecha de nacimiento'),
-  body('name').notEmpty().isLength({min: 2}).withMessage('Escribí tu nombre'),
-  body('last_name').notEmpty().isLength({min: 2}).withMessage('Escribí tu apellido'),
+const validations = (req,res) => {
+  body('date').notEmpty().withMessage('Ingresa tu fecha de nacimiento').run(req),
+  body('name').notEmpty().isLength({min: 2}).withMessage('Escribí tu nombre').run(req),
+  body('last_name').notEmpty().isLength({min: 2}).withMessage('Escribí tu apellido').run(req),
   body('email').isEmail().bail().withMessage('Escribe un email válido').custom((value,{req})=>{
     return Users.findOne({email:value}).then(user =>{
       if(user){
         return Promise.reject('El email ya existe')
       }
     });
-  }),
-  body('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres'),
+  }).run(req),
+  body('password').notEmpty().isLength({min: 8}).withMessage('Tu contraseña debe contener al menos 8 caracteres').run(req),
   body('user_img').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];
-		
-		// if (!file) {
-		// 	throw new Error('Tienes que subir una imagen');
-		// } else {
-		 	let fileExtension = path.extname(file.originalname);
+		let fileExtension = path.extname(file.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
 				return true;
-	})
-]
+	}).run(req)
+}
 
 //VALIDACION FORMULARIO LOGIN USUARIOS
 
