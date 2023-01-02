@@ -42,10 +42,16 @@ window.addEventListener('load',function(){
         let user_img = document.querySelector('input.user_img');
         let filePath = user_img.value;
         let allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-        if(!allowedExtensions.exec(filePath)){
+
+        if(user_img.value == ''){
+            console.log('imagen OK');
+        }else if(!allowedExtensions.exec(filePath)){
             errors.push('Por favor adjunta archivos con una extensión válida ejm:.jpeg/.jpg/.png/.gif.');
             // user_img.value = '';
             // return false;
+        }
+        else {
+            console.log('imagen OK')
         }
 
         if (errors.length > 0){
@@ -55,6 +61,8 @@ window.addEventListener('load',function(){
                 ulErrors.innerHTML += '<li>' + errors[i] + '</li>'
             }
         }
+
+        console.log(errors);
     })
 }); 
 
