@@ -58,60 +58,65 @@ const dbUsersController = {
   },
   'loginProcess':(req,res)=>{
     
-    let userToFind=Users.findOne({
+    async function findUser (){
+      let userToFind = await Users.findOne({
         where: {
             email: req.body.email
           },
           raw: true
-    }).then(user=>{
-        let userToLogin=user.email;
-        let userPassword=user.password
-    if(userToLogin){ 
-      if(req.body.remindUser){
-        res.cookie('userEmail',req.body.email,{
-          maxAge: ((60*1000)*60)
-        }) 
-      } 
-      let passwordOk = bcryptjs.compareSync(req.body.password,userPassword);
-      if(passwordOk){
-        delete userPassword;
-        req.session.userLogged = userToLogin;
-        
-        res.redirect('/users/profile')
-      }
-      return res.render("login", {
+    });
+    if ((userToFind === null) || (req.body.email === '') ){
+      res.render('login',{
         errors:{
           password:{
-            msg:'Las credenciales son incorrectas'
-          },
-          email:{
-            msg:'Las credenciales son incorrectas'
+            msg:'las credenciales son incorrectas'
           }
         }
-      }) 
-      }      
-  //   return res.render("login", {
-  //   errors:{
-  //     email:{
-  //       msg:'Por favor ingresa un email válido'
-  //     }
-  //   }
-  // })     
       })
-      .catch(error => res.send(error));
+    } else{
+      let userToLogin=userToFind.email;
+      let userPassword=userToFind.password
+      console.log(userToFind.email);
+      if(userToLogin){ 
+        if(req.body.remindUser){
+          res.cookie('userEmail',req.body.email,{
+            maxAge: ((60*1000)*60)
+          }) 
+        } 
+        let passwordOk = bcryptjs.compareSync(req.body.password,userPassword);
+        if(passwordOk){
+          delete userPassword;
+          req.session.userLogged = userToLogin;
+          
+          res.redirect('/users/profile')
+        }else {
+          res.render('login',{
+            errors:{
+              password:{
+                msg:'las credenciales son incorrectas'
+              }
+            }
+          })
+        }
+        } 
+      // console.log(userToFind instanceof Users); // true
+    }
+
+  }
+  findUser();
   },
   'shoppingcart': (req, res) => {
     res.render("shoppingcart");
   },
   'profile': (req, res) => {
-    console.log(req.session);
+    // console.log(req.session);
     let userProfile = Users.findOne({
       where: {
           email: req.session.userLogged
          },
          raw: true
     }).then(user=>{
-      console.log(user);
+      // console.log(user);
       res.render('profile',{user})
     })
   },

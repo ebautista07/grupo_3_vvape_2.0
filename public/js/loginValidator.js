@@ -1,6 +1,8 @@
 window.addEventListener('load',function(){
     let formulario = document.querySelector('form.loginForm')
 
+    console.log(formulario)
+
     formulario.addEventListener('submit',function(event){
         // event.preventDefault();
         let errors = []
@@ -31,4 +33,5 @@ window.addEventListener('load',function(){
     })
 }); 
 
+console.log(errors);
 
