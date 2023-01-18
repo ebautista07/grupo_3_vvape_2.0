@@ -9,9 +9,13 @@ const { body } = require('express-validator')
 
 //EXPRESS-VALIDATOR
 
-//CONTROLLER
+//CONTROLLERS
 const dbUsersController = require("../controllers/dbUsersController");
 // const usersController = require("../controllers/usersController");
+
+// CONTROLLERS API
+const dbUsersControllerAPI = require("../controllers/apis/dbUsersControllerAPI");
+
 
 // MIDDLEWARES
 
@@ -75,6 +79,12 @@ const validationsLogin = [
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
+// APIS
+
+router.get('/api',dbUsersControllerAPI.listUsers)
+router.get('/api:id',dbUsersControllerAPI.show)
+// APIS END
 
 router.get("/register",guestMiddleware,dbUsersController.register);
 router.post("/register",validations,dbUsersController.store);
