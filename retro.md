@@ -2,6 +2,8 @@ Retrospectiva
 
 https://app.scatterspoke.com/invitation/cl82e1rft1082860nk42yyt0135
 
+Retrospectiva #7 / Sprint 7 https://app.scatterspoke.com/board/cld2a7fjl6007700nlcth47ofob?inviter=cl82e1rpr1084330nk4yvx48i9n
+
 Retrospectiva #6 / Sprint 6 https://app.scatterspoke.com/board/clbljbph214807440mmmyvl42bb1?inviter=cl82e1rpr1084330nk4yvx48i9n
 
 Retrospectiva #5 / Sprint 5 https://app.scatterspoke.com/board/clb1icc6918330mlk96olvdl0%3Finviter=cl82e1rpr1084330nk4yvx48i9n
