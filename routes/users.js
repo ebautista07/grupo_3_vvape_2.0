@@ -85,6 +85,7 @@ router.get('/', function(req, res, next) {
 router.get('/api/listUsers',dbUsersControllerAPI.listUsers)
 router.get('/api/listUsers/show/:id',dbUsersControllerAPI.show)
 router.get('/api/users',dbUsersControllerAPI.users)
+router.get('/api/listUsers/detail/:id',dbUsersControllerAPI.user)
 // APIS END
 
 router.get("/register",guestMiddleware,dbUsersController.register);

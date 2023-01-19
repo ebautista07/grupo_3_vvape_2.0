@@ -11,6 +11,7 @@ const fetch = (...args) =>
 
 const Users = db.User;
 
+
 const dbUsersControllerAPI = {
   
   'listUsers':(req,res)=>{
@@ -42,7 +43,8 @@ const dbUsersControllerAPI = {
         name: user.name,
         last_name: user.last_name,
         email:user.email,
-        birth_date: user.birth_date
+        birth_date: user.birth_date,
+        user_img: user.user_img
       }
       }
       res.json(response)
@@ -54,11 +56,20 @@ const dbUsersControllerAPI = {
 
   })
   },
-  'users':(req,res)=>{
-    fetch('http://localhost:3001/users/api/users')
+  'users': async (req,res)=>{
+    let users = await fetch('http://localhost:3001/users/api/listUsers')
     .then(data => data.json())
     .then(users =>{
-      res.render('profileApi',{users})
+      return res.render('profileApi', {users:users.data})
+    })
+  },
+  'user': async (req,res)=>{
+    let user = await fetch(`http://localhost:3001/users/api/listUsers/show/${req.params.id}`)
+    .then(data => data.json())
+    
+    .then(user =>{
+      console.log(user)
+      return res.render('profileDetailApi', {user:user.data})
     })
   }
 }

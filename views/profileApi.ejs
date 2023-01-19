@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %>
-    <title>Perfil</title>
+    <title>Perfil API</title>
 </head>
 <body>
     <!-- INICIO HEADER -->
     <%- include('./partials/nav') %>
     <!-- INICIO MAIN -->
-    <main>
-    
-
+    <main >
+   
+        <div class="card">
         <% for( let i = 0; i < users.length; i++ ) { %>
-            <li>
-                <a href="api/listUsers/show/<%= users[i].id %>"><%= users[i].name %></a>
-            </li>
+           
+                <a class ="api"id="api" href="listUsers/detail/<%= users[i].id %>"><%= users[i].name %></a>
+            
             <% } %>
-
+    </div>
       
     </main>
     <%- include('./partials/footer') %>
