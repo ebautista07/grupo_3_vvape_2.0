@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <title>Perfil</title>
+</head>
+<body>
+    <!-- INICIO HEADER -->
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main>
+    
+
+        <% for( let i = 0; i < users.length; i++ ) { %>
+            <li>
+                <a href="api/listUsers/show/<%= users[i].id %>"><%= users[i].name %></a>
+            </li>
+            <% } %>
+
+      
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
+
