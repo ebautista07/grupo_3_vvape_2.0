@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head') %>
+    <%- include('./partials/headAPI') %>
     <title>Detalle API</title>
 </head>
 <body>
@@ -10,20 +10,25 @@
     <main >
    
         <div >
-        
-            <li class="api">
-                <%= product.name %> <br>
-                <%= product.description %><br>
-                <%= product.price %><br>
-                <a href="http://localhost:3001/images/<%= product.img %>"><%= product.img %></a>
-                <%= product.warning %><br>
-                <%= product.category_id %><br>
-                <%= product.stock %><br>
-            </li>
+        <ul class="api">
             
-            
+               <li> <span>Name:</span>  <%= product.name %> </li>
+               <br>
+               <li> <span>Description:</span>  <%= product.description %></li>
+               <br>
+               <li> <span>Price:</span>  <%= product.price %></li>
+               <br>
+               <li> <span>Image:</span>  <a class='url' href="http://localhost:3001/images/<%= product.img %>"><%= product.img %></a></li>
+               <br>
+               <li> <span>Warning:</span>  <%= product.warning %></li>
+               <br>
+               <li> <span>Category:</span>  <%= product.category_id %></li>
+               <br>
+               <li> <span>Stock:</span>  <%= product.stock %></li>
+           
+        </ul>            
 
-    </div>
+        </div>
       
     </main>
     <%- include('./partials/footer') %>

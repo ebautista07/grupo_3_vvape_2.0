@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head') %>
+    <%- include('./partials/headAPI') %>
     <title>Perfil API</title>
 </head>
 <body>
@@ -9,12 +9,15 @@
     <!-- INICIO MAIN -->
     <main >
    
-        <div class="card">
+        <div >
+            <ul class="api">
         <% for( let i = 0; i < products.length; i++ ) { %>
            
-                <a class ="api"id="api" href="listProducts/detail/<%= products[i].id %>"><%= products[i].name %></a>
-            
+               <li> <a class='url' href="listProducts/detail/<%= products[i].id %>"><%= products[i].name %></a></li><br>
+        
             <% } %>
+            
+        </ul>
     </div>
       
     </main>

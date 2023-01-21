@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head') %>
+    <%- include('./partials/headAPI') %>
     <title>Detalle API</title>
 </head>
 <body>
@@ -10,17 +10,19 @@
     <main >
    
         <div >
-        
-            <li class="api">
-                <%= user.name %> <br>
-                <%= user.last_name %><br>
-                <%= user.email %><br>
-                <%= user.birth_date %><br>
-                <a href="http://localhost:3001/images/users/<%= user.user_img %>"><%= user.user_img %></a>
-            </li>
-            
-            
-
+            <ul class="api2">
+           
+               <li><span>Name: </span><%= user.name %></li>
+               <br>
+                <li><span>Last name: </span><%= user.last_name %></li>
+                <br>
+                <li><span>Email: </span><%= user.email %></li>
+                <br>
+                <li><span>Birthday: </span><%= user.birth_date %></li><br>
+                <li><span>Profile image: </span><a class='url2'href="http://localhost:3001/images/users/<%= user.user_img %>"><%= user.user_img %></a></li>
+           
+                
+        </ul>  
     </div>
       
     </main>
