@@ -81,7 +81,6 @@ router.get('/', function(req, res, next) {
 });
 
 // APIS
-
 router.get('/api/listUsers',dbUsersControllerAPI.listUsers)
 router.get('/api/listUsers/show/:id',dbUsersControllerAPI.show)
 router.get('/api/users',dbUsersControllerAPI.users)
@@ -106,5 +105,10 @@ router.put("/profile", upload.any(),dbUsersController.update);
 
 // shoppingK
 router.get("/shoppingcart", dbUsersController.shoppingcart);
+
+//images
+router.get("/images");
+
+
 
 module.exports = router;

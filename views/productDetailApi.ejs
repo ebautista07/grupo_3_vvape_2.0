@@ -12,11 +12,13 @@
         <div >
         
             <li class="api">
-                <%= user.name %> <br>
-                <%= user.last_name %><br>
-                <%= user.email %><br>
-                <%= user.birth_date %><br>
-                <a href="http://localhost:3001/images/users/<%= user.user_img %>"><%= user.user_img %></a>
+                <%= product.name %> <br>
+                <%= product.description %><br>
+                <%= product.price %><br>
+                <a href="http://localhost:3001/images/<%= product.img %>"><%= product.img %></a>
+                <%= product.warning %><br>
+                <%= product.category_id %><br>
+                <%= product.stock %><br>
             </li>
             
             

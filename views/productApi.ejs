@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+    <title>Perfil API</title>
+</head>
+<body>
+    <!-- INICIO HEADER -->
+    <%- include('./partials/nav') %>
+    <!-- INICIO MAIN -->
+    <main >
+   
+        <div class="card">
+        <% for( let i = 0; i < products.length; i++ ) { %>
+           
+                <a class ="api"id="api" href="listProducts/detail/<%= products[i].id %>"><%= products[i].name %></a>
+            
+            <% } %>
+    </div>
+      
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+</html>
+

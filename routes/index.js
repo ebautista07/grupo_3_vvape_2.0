@@ -8,6 +8,9 @@ const productsController = require("../controllers/productsController");
 const dbProductsController = require("../controllers/dbProductsController");
 const usersController = require("../controllers/usersController");
 
+// CONTROLLERS API
+const dbProductsControllerAPI = require("../controllers/apis/dbProductsControllerAPI");
+
 const multer = require("multer");
 const path = require("path");
 
@@ -73,7 +76,12 @@ router.put("/products/modify/:id", upload.any(), dbProductsController.update);
 router.delete("/products/delete/:id", dbProductsController.delete);
 // router.post("/products/delete/:id", productsController.delete);
 
-
+// APIS
+router.get('/api/listProducts',dbProductsControllerAPI.listProducts)
+router.get('/api/listProducts/show/:id',dbProductsControllerAPI.show)
+router.get('/api/products',dbProductsControllerAPI.products)
+router.get('/api/listProducts/detail/:id',dbProductsControllerAPI.product)
+// APIS END
 
 module.exports = router;
 
