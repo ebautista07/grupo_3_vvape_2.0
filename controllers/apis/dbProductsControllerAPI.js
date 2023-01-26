@@ -24,8 +24,8 @@ const dbProductsControllerAPI = {
             status: 200,
             count: products.length,
             countByCategory: {
-              countVapers: products.filter(product=>product.category_id===2).length,
-              countLiquids: products.filter(product=>product.category_id===1).length,
+              Vapers: products.filter(product=>product.category_id===2).length,
+              Liquids: products.filter(product=>product.category_id===1).length,
             },
             data: products,
             url: `api/listProducts`
