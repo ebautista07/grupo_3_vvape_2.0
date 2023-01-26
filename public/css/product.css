@@ -56,6 +56,13 @@ input .carrito{
     background-color: transparent;
 }
 
+.loginBtn2{
+    
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    
+}
+
 
 @media (max-width:769px){
      

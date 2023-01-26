@@ -9,9 +9,10 @@
     <%- include('./partials/nav') %>
     <!-- INICIO MAIN -->
     <main>
-                 
+        
                 <div class="card">
                         <h4 class="productname"><%= product.name %></h4>
+                        
                 <div class="notitle">
                     <section class="noenvio"> 
              <div class="picture"> <img src="/images/<%= product.img %>" alt="vaper4"></div>
@@ -29,10 +30,13 @@
                     </div>
                     <%- include('./partials/addtocart') %>
                 </div>    </section>
+            
                 <%- include('./partials/envios') %>
                     
                     </div>
+                    <div class="loginBtn2"><a class="loginBtn" href="/products/<%=product.id%>/modifyproduct"><input class="loginBtn" type="submit" href="/products/<%=product.id%>/modifyproduct" value="EDIT PRODUCT"></a></div>
             </div>
+            
 
         </main>
     <!-- FIN MAIN --> 
